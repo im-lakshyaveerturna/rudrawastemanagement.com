@@ -1,0 +1,407 @@
+.home {
+  width: 100%;
+}
+
+.hero-section {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  padding: 2rem;
+  padding-top: calc(80px + 2rem);
+  position: relative;
+  background-image: url("../assets/20251125_1924_Indian Waste Management Technicians_simple_compose_01kaxmgw0bek4aw20kvz0p1qer.png");
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+}
+
+.hero-section::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.4);
+  z-index: 1;
+}
+
+.hero-content {
+  max-width: 900px;
+  text-align: left;
+  z-index: 2;
+  position: relative;
+}
+
+.hero-title {
+  font-size: 4rem;
+  font-weight: 500;
+  color: #ffffff;
+  margin-bottom: 1.5rem;
+  line-height: 1.1;
+  letter-spacing: -1px;
+}
+
+.hero-description {
+  font-size: 1.4rem;
+  color: #ffffff;
+  margin-bottom: 3rem;
+  line-height: 1.6;
+  font-weight: 300;
+  opacity: 0.95;
+}
+
+.cta-button {
+  display: inline-block;
+  padding: 1.1rem 3rem;
+  background-color: #029e12;
+  color: #f9f7f7;
+  text-decoration: none;
+  border-radius: 15px;
+  font-size: 1rem;
+  font-weight: 800;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 20px rgba(236, 234, 234, 0.2);
+  border: none;
+}
+
+.cta-button:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 30px rgba(0, 0, 0, 0.3);
+}
+
+.features-section {
+  background-color: #ffffff;
+  padding: 0;
+}
+
+.container {
+  max-width: 100%;
+  margin: 0;
+}
+
+.section-title {
+  font-size: 2.8rem;
+  font-weight: 700;
+  color: #1a1a1a;
+  text-align: center;
+  padding: 4rem 2rem 2rem;
+  margin: 0;
+  letter-spacing: -1px;
+}
+
+/* Vertical Services Layout */
+.services-vertical {
+  max-width: 100%;
+}
+
+.service-block {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 0;
+  padding: 0;
+  background: #ffffff;
+  border: none;
+  border-radius: 0;
+  margin: 0;
+  min-height: 100vh;
+  width: 100%;
+}
+
+.service-block:nth-child(even) {
+  background-color: #f8f8f8;
+}
+
+#waste-collection {
+  background-color: #f0f8f1;
+}
+
+#waste-treatment {
+  background-color: #f0f8f1;
+}
+
+#consultancy-services {
+  background-color: #f0f8f1;
+}
+
+.service-block:hover {
+  transform: none;
+  box-shadow: none;
+}
+
+.service-image-placeholder {
+  width: 50%;
+  height: 100vh;
+  border-radius: 0;
+  background: #f3f3f3;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 3rem;
+  overflow: visible;
+  position: relative;
+}
+
+.service-image {
+  width: 100%;
+  height: 90%;
+  max-height: 85vh;
+  object-fit: cover;
+  display: block;
+  border-radius: 4rem;
+  box-shadow: 0.4rem 0.4rem 0rem #029e12;
+  animation: slide-in-image 0.8s ease-out forwards;
+  animation-timeline: view();
+  animation-range: entry 0% cover 40%;
+}
+
+/* Color-matched shadows for each service section */
+#waste-collection .service-image {
+  box-shadow: 0.4rem 0.4rem 0rem #029e12;
+}
+
+#waste-treatment .service-image {
+  box-shadow: -0.4rem 0.4rem 0rem #029e12;
+  animation: slide-in-image-right 0.8s ease-out forwards;
+  animation-timeline: view();
+  animation-range: entry 0% cover 40%;
+}
+
+#consultancy-services .service-image {
+  box-shadow: 0.4rem 0.4rem 0rem #029e12;
+}
+
+@keyframes slide-in-image {
+  from {
+    opacity: 0;
+    transform: translateX(-50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes slide-in-image-right {
+  from {
+    opacity: 0;
+    transform: translateX(50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.service-content {
+  width: 50%;
+  padding: 4rem 6rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.service-content h3 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #1a1a1a;
+  margin: 0 0 1.5rem;
+}
+
+.service-content .service-heading {
+  margin: 0 0 1.5rem;
+}
+
+.service-content .service-heading .scroll-float-text {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #1a1a1a;
+  text-align: left;
+}
+
+.service-content p {
+  font-size: 1.1rem;
+  line-height: 1.8;
+  color: #444;
+  margin: 0 0 1.5rem;
+}
+
+.service-content p:last-child {
+  margin-bottom: 0;
+}
+
+@media (max-width: 968px) {
+  .service-block {
+    flex-direction: column;
+    min-height: auto;
+  }
+  
+  .service-image-placeholder {
+    width: 100%;
+    height: 50vh;
+    min-height: 300px;
+    padding: 2rem;
+  }
+  
+  .service-image {
+    height: 100%;
+    max-height: 45vh;
+    border-radius: 3rem;
+    box-shadow: 0.5rem 0.3rem 0rem #029e12;
+  }
+  
+  #waste-collection .service-image {
+    box-shadow: 0.5rem 0.3rem 0rem #029e12;
+  }
+  
+  #waste-treatment .service-image {
+    box-shadow: -0.5rem 0.3rem 0rem #029e12;
+  }
+  
+  #consultancy-services .service-image {
+    box-shadow: 0.5rem 0.3rem 0rem #029e12;
+  }
+  
+  #waste-treatment .service-image {
+    box-shadow: -0.5rem 0.3rem 0rem #029e12;
+  }
+  
+  .service-content {
+    width: 100%;
+    padding: 3rem 2rem;
+  }
+  
+  .service-content h3 {
+    font-size: 2rem;
+  }
+}
+
+@media (max-width: 600px) {
+  .section-title {
+    font-size: 2.2rem;
+    padding: 3rem 1.5rem 1.5rem;
+  }
+  
+  .service-image-placeholder {
+    padding: 1.5rem;
+  }
+  
+  .service-image {
+    border-radius: 2rem;
+    box-shadow: 0.3rem 0.2rem 0rem #029e12;
+  }
+  
+  #waste-collection .service-image {
+    box-shadow: 0.3rem 0.2rem 0rem #029e12;
+  }
+  
+  #waste-treatment .service-image {
+    box-shadow: -0.3rem 0.2rem 0rem #029e12;
+  }
+  
+  #consultancy-services .service-image {
+    box-shadow: 0.3rem 0.2rem 0rem #029e12;
+  }
+  
+  #waste-treatment .service-image {
+    box-shadow: -0.3rem 0.2rem 0rem #029e12;
+  }
+  
+  .service-content {
+    padding: 2rem 1.5rem;
+  }
+  
+  .service-content h3 {
+    font-size: 1.75rem;
+  }
+  
+  .service-content p {
+    font-size: 1rem;
+  }
+}
+
+.feature-card h3 {
+  font-size: 1.5rem;
+  color: #1a1a1a;
+  margin-bottom: 1rem;
+  font-weight: 600;
+}
+
+.feature-card p {
+  color: #666;
+  line-height: 1.7;
+  font-size: 1rem;
+}
+
+.about-section {
+  background: #f8f8f8;
+  padding: 6rem 2rem;
+}
+
+.about-section .section-title {
+  color: #1a1a1a;
+}
+
+.about-text {
+  font-size: 1.2rem;
+  line-height: 1.8;
+  text-align: center;
+  max-width: 800px;
+  margin: 0 auto 4rem;
+  color: #333;
+}
+
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 3rem;
+  margin-top: 4rem;
+}
+
+.stat-item {
+  text-align: center;
+  padding: 2.5rem;
+  background: #ffffff;
+  border-radius: 16px;
+  border: 1px solid #e5e5e5;
+}
+
+.stat-number {
+  font-size: 3.5rem;
+  font-weight: 700;
+  color: #1a1a1a;
+  margin-bottom: 0.5rem;
+}
+
+.stat-label {
+  font-size: 1.1rem;
+  color: #666;
+  font-weight: 500;
+}
+
+@media (max-width: 768px) {
+  .hero-title {
+    font-size: 2.8rem;
+  }
+
+  .hero-description {
+    font-size: 1.2rem;
+  }
+
+  .section-title {
+    font-size: 2.2rem;
+  }
+
+  .features-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .stats-grid {
+    grid-template-columns: 1fr;
+  }
+}
