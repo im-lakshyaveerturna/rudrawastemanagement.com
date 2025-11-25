@@ -31,29 +31,29 @@ function ContactUs() {
                   <div className="info-icon">📍</div>
                   <div className="info-text">
                     <h3>Address</h3>
-                    <p>123 Green Street, Eco City, EC 12345</p>
+                    <p>Bhopa Road, Near Bindal Mill, Muzaffarnagar, Uttar Pradesh- 251001</p>
                   </div>
                 </div>
                 <div className="info-item">
                   <div className="info-icon">📞</div>
                   <div className="info-text">
                     <h3>Phone</h3>
-                    <p>+1 (555) 123-4567</p>
+                    <p>+91 9927025877, +91 9012519000</p>
+                     
                   </div>
                 </div>
                 <div className="info-item">
                   <div className="info-icon">✉️</div>
                   <div className="info-text">
                     <h3>Email</h3>
-                    <p>info@rudrawaste.com</p>
+                    <p>office@rudrawastemanagement.com</p>
                   </div>
                 </div>
                 <div className="info-item">
                   <div className="info-icon">⏰</div>
                   <div className="info-text">
                     <h3>Hours</h3>
-                    <p>Monday - Friday: 8:00 AM - 6:00 PM</p>
-                    <p>Saturday: 9:00 AM - 2:00 PM</p>
+                    <p>Monday - Saturday: 9:00 AM - 5:00 PM</p>
                   </div>
                 </div>
               </div>
