@@ -5,11 +5,14 @@ import consultancyImg from '../assets/Consultancy.png'
 import { SplitText } from '../components/SplitText'
 import { motion } from 'framer-motion'
 
+// Gallery removed from Home page per request
+
 interface HomeProps {
   onContactClick: () => void
 }
 
 function Home({ onContactClick }: HomeProps) {
+
   return (
     <div className="home">
       <section className="hero-section">
@@ -99,7 +102,7 @@ function Home({ onContactClick }: HomeProps) {
                 <div className="stat-label">Years Experience</div>
               </div>
               <div className="stat-item">
-                <div className="stat-number">500+</div>
+                <div className="stat-number">5000+</div>
                 <div className="stat-label">Happy Clients</div>
               </div>
               <div className="stat-item">
@@ -110,6 +113,8 @@ function Home({ onContactClick }: HomeProps) {
           </div>
         </div>
       </section>
+
+      {/* Gallery removed per request */}
     </div>
   )
 }

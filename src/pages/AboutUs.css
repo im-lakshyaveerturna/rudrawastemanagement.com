@@ -9,6 +9,18 @@
   text-align: center;
   color: white;
 }
+.about-hero .container {
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.about-hero .page-title {
+  font-size: 3rem;
+}
+
+.about-hero .page-subtitle {
+  margin-top: 0.25rem;
+}
 
 .about-hero .page-title {
   font-size: 5.5rem;
@@ -21,6 +33,14 @@
   font-size: 1.3rem;
   opacity: 0.9;
   font-weight: 300;
+}
+
+/* Shared hero logo styling for pages using logo in hero */
+.about-hero .page-logo {
+  max-width: 280px;
+  width: 100%;
+  height: auto;
+  display: inline-block;
 }
 
 .about-story {
@@ -125,6 +145,80 @@
   background-color: #ffffff;
   padding: 6rem 2rem;
 }
+.about-why-choose .container,
+.about-team .container,
+.about-story .container {
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.about-why-choose h2,
+.about-team h2,
+.about-story h2 {
+  margin-bottom: 1.25rem;
+}
+
+.about-why-choose p,
+.about-team p,
+.about-story p {
+  color: #404040;
+}
+
+.reasons-list {
+  list-style: none;
+  padding-left: 0;
+  margin: 1rem auto 0;
+}
+
+.reasons-list li {
+  position: relative;
+  padding-left: 1.5rem;
+}
+
+.reasons-list li::before {
+  content: '\2022';
+  position: absolute;
+  left: 0;
+  top: 0.1rem;
+  color: #029e12;
+  font-weight: 900;
+}
+
+.about-why-choose .section-block,
+.about-team .section-block {
+  background: #f9f9f9;
+  border-radius: 10px;
+  padding: 1.25rem 1.25rem;
+  border-left: 4px solid #029e12;
+}
+
+.about-why-choose + .about-why-choose {
+  padding-top: 2rem;
+}
+
+.about-why-choose h2 {
+  font-size: 1.8rem;
+}
+
+.about-team h2 {
+  font-size: 2rem;
+}
+
+.about-team .commitment-content p + p {
+  margin-top: 1rem;
+}
+
+/* Laws & Procedures page specific tweaks */
+.about-why-choose .container > h2 {
+  display: inline-block;
+  padding-bottom: 0.25rem;
+  border-bottom: 2px solid #029e12;
+}
+
+.about-why-choose .container > p,
+.about-why-choose .container > ul {
+  margin-top: 0.75rem;
+}
 
 .about-why-choose h2 {
   font-size: 2.5rem;
@@ -221,5 +315,9 @@
   .about-why-choose,
   .about-team {
     padding: 4rem 1.5rem;
+  }
+
+  .about-hero .page-logo {
+    max-width: 220px;
   }
 }

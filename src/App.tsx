@@ -3,8 +3,9 @@ import './App.css'
 import Header from './components/Header'
 import Home from './pages/Home'
 import ContactUs from './pages/ContactUs'
-import AboutUs from './pages/AboutUs'
 import Gallery from './pages/Gallery'
+import WhoWeAre from './pages/WhoWeAre'
+import LawsRegulations from './pages/LawsRegulations'
 
 function App() {
   const [currentPage, setCurrentPage] = useState('Home')
@@ -13,15 +14,14 @@ function App() {
     <div className="app">
       <Header currentPage={currentPage} onNavigate={setCurrentPage} />
       <main className="main-content">
-        {currentPage === 'Home' ? (
+        {currentPage === 'Home' && (
           <Home onContactClick={() => setCurrentPage('Contact Us')} />
-        ) : currentPage === 'About Us' ? (
-          <AboutUs />
-        ) : currentPage === 'Gallery' ? (
-          <Gallery />
-        ) : (
-          <ContactUs />
         )}
+        {/* About Us page removed; About Us acts as dropdown only */}
+        {currentPage === 'Who We Are' && <WhoWeAre />}
+        {currentPage === 'Laws & Regulations' && <LawsRegulations />}
+        {currentPage === 'Gallery' && <Gallery />}
+        {currentPage === 'Contact Us' && <ContactUs />}
       </main>
     </div>
   )
