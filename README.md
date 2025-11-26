@@ -1,134 +1,86 @@
 # Rudra Waste Management
 
-Sustainable, compliant, and reliable waste management services. This repository contains the Rudra Waste Management website built with React, TypeScript, and Vite, showcasing our services, regulations guidance, and contact information.
+A responsible, compliance-led waste management partner committed to public health, environmental protection, and operational excellence. This document describes the company—its purpose, values, services, standards, and ways of working.
 
-## Overview
+## Who We Are
 
-The site presents a clear, modern experience with simple navigation and brand-consistent styling. It includes an About menu with two focused pages, a 3D gallery with lightbox, and an accessible, keyboard-friendly header.
+Rudra Waste Management provides end-to-end waste management solutions for municipalities, healthcare providers, institutions, and businesses. We focus on safe handling, transparent processes, and measurable environmental outcomes through compliant collection, transportation, processing, treatment, and disposal.
 
-## Key Features
+## Mission & Vision
 
-- Branded header with dropdown: `About Us → Who We Are`, `Laws & Regulations`
-- Pages: Home, Who We Are, Laws & Regulations, Gallery, Contact Us
-- 3D Circular Gallery with lightbox image viewer
-- Clean, readable legal content with structured sections
-- Accessible navigation (keyboard focus, ARIA labels)
-- Green brand palette and responsive design
+- **Mission:** Deliver safe, efficient, and compliant waste management that protects people and the environment while creating reliable value for our partners.
+- **Vision:** Enable a cleaner, healthier future by building systems that minimize waste, maximize resource recovery, and uphold the highest safety standards.
 
-## Tech Stack
+## Core Values
 
-- React + TypeScript + Vite
-- Styling with CSS (page-scoped styles)
-- framer-motion for subtle text/CTA animations
-- ogl (WebGL) for the circular 3D gallery
+- **Safety:** Zero-compromise safety culture for staff, customers, and communities.
+- **Compliance:** Adherence to applicable rules, permits, and approvals at all times.
+- **Transparency:** Clear documentation, manifesting, and traceability across the lifecycle of waste.
+- **Responsiveness:** Reliable service delivery with predictable SLAs and rapid issue resolution.
+- **Sustainability:** Waste minimization, segregation-at-source, recycling, and resource recovery.
+- **Partnership:** Training, awareness, and continuous improvement with our clients.
 
-## Getting Started
+## What We Do (Services)
 
-Prerequisites: Node.js 18+
+- **Collection & Logistics:** Scheduled and on-demand pickup with compliant containers, color coding, and labeling.
+- **Segregation & Handling:** Source-segregation guidance, safe handling, and staging for downstream treatment.
+- **Treatment & Disposal:** Treatment pathways aligned with waste category and regulatory norms; compliant final disposal.
+- **Biomedical Waste Management:** End-to-end handling in line with applicable Biomedical Waste Management Rules (segregation, collection, transport, treatment, and disposal).
+- **Regulatory Support & Training:** Documentation, manifest management, SOPs, audits, and staff training on safe practices.
 
-```sh
-npm install
-npm run dev
-```
+## Industries We Serve
 
-Build and preview:
+- **Healthcare:** Hospitals, clinics, diagnostic centers, dental practices, labs, and biomedical facilities.
+- **Public & Private Sector:** Municipal bodies, residential communities, commercial complexes, hospitality.
+- **Industrial & Institutional:** Manufacturing units, campuses, schools/colleges, and research institutions.
 
-```sh
-npm run build
-npm run preview
-```
+## Compliance & Standards
 
-## Project Highlights
+- **Regulatory Alignment:** Operates in accordance with applicable regulations and guidelines issued by competent authorities (e.g., Central/State/Local Pollution Control Boards where applicable).
+- **Documentation & Traceability:** Use of manifests/records, labeling, and documented SOPs for each waste category.
+- **PPE & Training:** Personnel equipped with proper PPE; routine trainings and toolbox talks.
+- **Inspections & Audits:** Regular internal checks and client-side audits to ensure process discipline.
 
-- About menu split into two dedicated pages to improve clarity:
-  - `Who We Are` — our story, mission, and services
-  - `Laws & Regulations` — essential definitions, duties, and procedures
-- Logo-first hero on `Who We Are` for stronger brand presence
-- `Gallery` with an interactive circular layout and click-to-enlarge lightbox
+## Our Process (High-Level)
 
-## Content & Customization
+1. **Assessment:** Understand client waste streams, current practices, and compliance requirements.
+2. **Onboarding:** Provide bins/liners, color coding, and SOPs; train staff.
+3. **Operations:** Scheduled collection, safe transport, and category-appropriate treatment/disposal.
+4. **Records:** Maintain manifests, logs, and reports for audits and compliance.
+5. **Improvement:** Review data, optimize routing/segregation, and enhance outcomes.
 
-- Update copy in `src/pages/*.tsx` (e.g., `WhoWeAre.tsx`, `LawsRegulations.tsx`)
-- Update header navigation in `src/components/Header.tsx`
-- Adjust styles in page/component CSS files under `src/pages` and `src/components`
-- Brand assets live in `src/assets/` (logo: `rudra-removebg-preview.png`)
+## Sustainability Approach
+
+- **Segregation-at-Source:** Reduce contamination and improve recovery rates.
+- **Recycling & Recovery:** Channel recyclables and organics to appropriate facilities.
+- **Resource Efficiency:** Optimize routes and loads to reduce emissions and costs.
+- **Awareness:** Partner programs to build a culture of responsible waste management.
+
+## Health, Safety, Environment (HSE)
+
+- **Safe Operations:** SOPs for handling, storage, and transport; incident reporting and corrective actions.
+- **Emergency Preparedness:** Spill kits, first-aid readiness, and escalation protocols.
+- **Community Protection:** Odor, litter, and nuisance control; hygiene-focused practices.
+
+## Technology & Reporting
+
+- **Tracking & Records:** Digital manifesting/record-keeping aligned with client and regulatory needs.
+- **Visibility:** Periodic reporting on volumes, categories, and compliance indicators.
+
+## Coverage
+
+Rudra Waste Management serves clients across the regions where it operates. Engagement models are tailored to local regulations and client requirements.
 
 ## Contact
 
-For inquiries and service requests, please use the `Contact Us` page on the site.
+Please add your official contact details here:
 
-— Rudra Waste Management
+- **Phone:** <to be added>
+- **Email:** <to be added>
+- **Address:** <to be added>
 
-# React + TypeScript + Vite
+For general inquiries, share your requirements and we’ll guide you to the right solution.
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## Legal Notice
 
-Currently, two official plugins are available:
-
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
-
-## React Compiler
-
-The React Compiler is currently not compatible with SWC. See [this issue](https://github.com/vitejs/vite-plugin-react/issues/428) for tracking the progress.
-
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
-
-```js
-export default defineConfig([
-  globalIgnores(["dist"]),
-  {
-    files: ["**/*.{ts,tsx}"],
-    extends: [
-      // Other configs...
-
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
-
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ["./tsconfig.node.json", "./tsconfig.app.json"],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-]);
-```
-
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
-
-```js
-// eslint.config.js
-import reactX from "eslint-plugin-react-x";
-import reactDom from "eslint-plugin-react-dom";
-
-export default defineConfig([
-  globalIgnores(["dist"]),
-  {
-    files: ["**/*.{ts,tsx}"],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs["recommended-typescript"],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ["./tsconfig.node.json", "./tsconfig.app.json"],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-]);
-```
+This document provides a general overview of company practices. Specific services are delivered under applicable contracts, approvals, and local regulations. Where healthcare/biomedical waste is involved, all handling and treatment follow the relevant rules and guidelines in the jurisdictions we serve.
