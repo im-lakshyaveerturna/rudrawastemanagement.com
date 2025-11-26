@@ -7,17 +7,29 @@ export default function WhoWeAre() {
       <section className="about-hero">
         <div className="container">
           <img src={logo} alt="Rudra Waste Management" className="page-logo" />
+          <div className="hero-cta">
+          </div>
         </div>
       </section>
 
       {/* Who We Are Intro */}
       <section className="about-story">
         <div className="container">
-          <div className="story-content">
-            <h2>Rudra Waste Management</h2>
-            <p>
-              We are a dedicated waste-management company, based in Muzaffarnagar, Uttar Pradesh. We are committed to providing comprehensive, environmentally responsible solutions and specialize in scientific collection, transportation, treatment, recycling, and disposal of various categories of waste, with a strong emphasis on sanitary, regulatory-compliant procedures, and environmental protection.
-            </p>
+          <div className="story-grid">
+            <div className="story-text">
+              <h2>Rudra Waste Management</h2>
+              <p>
+                We are a dedicated waste-management company, based in Muzaffarnagar, Uttar Pradesh. We are committed to providing comprehensive, environmentally responsible solutions and specialize in scientific collection, transportation, treatment, recycling, and disposal of various categories of waste, with a strong emphasis on sanitary, regulatory-compliant procedures, and environmental protection.
+              </p>
+            </div>
+
+            <aside className="story-quick">
+              <ul className="quick-features">
+                <li><strong>Safety-first</strong><span>Zero-compromise safety practices</span></li>
+                <li><strong>Regulatory Compliance</strong><span>Documented SOPs & manifests</span></li>
+                <li><strong>Local Knowledge</strong><span>Tailored solutions for regional rules</span></li>
+              </ul>
+            </aside>
           </div>
         </div>
       </section>

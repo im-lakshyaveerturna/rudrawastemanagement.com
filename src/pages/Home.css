@@ -56,21 +56,32 @@
 .cta-button {
   display: inline-block;
   padding: 1.1rem 3rem;
-  background-color: #029e12;
-  color: #f9f7f7;
+  color: #ffffff;
   text-decoration: none;
   border-radius: 15px;
   font-size: 1rem;
   font-weight: 800;
   cursor: pointer;
-  transition: all 0.3s ease;
-  box-shadow: 0 4px 20px rgba(236, 234, 234, 0.2);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
   border: none;
+  position: relative;
+  background: linear-gradient(180deg, #079c17 0%, #067611 70%, #02540b 100%);
+  box-shadow: 0 6px 16px rgba(0,0,0,0.25);
 }
-
+.cta-button::after {
+  content: '';
+  position: absolute;
+  left: 12px;
+  right: 12px;
+  top: 10px;
+  height: 36%;
+  border-radius: 12px;
+  background: linear-gradient(180deg, rgba(255,255,255,0.35) 0%, rgba(255,255,255,0.08) 100%);
+  pointer-events: none;
+}
 .cta-button:hover {
   transform: translateY(-3px);
-  box-shadow: 0 6px 30px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 10px 24px rgba(0,0,0,0.3);
 }
 
 .features-section {

@@ -1,3 +1,7 @@
+<div align="center">
+  <img src="src/assets/rudra-removebg-preview.png" alt="Rudra Waste Management" width="300">
+</div>
+
 # Rudra Waste Management
 
 A responsible, compliance-led waste management partner committed to public health, environmental protection, and operational excellence. This document describes the company—its purpose, values, services, standards, and ways of working.

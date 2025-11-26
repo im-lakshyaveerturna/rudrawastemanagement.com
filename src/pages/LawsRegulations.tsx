@@ -23,7 +23,7 @@ export default function LawsRegulations() {
       </section>
       <section className="about-why-choose">
         <div className="container">
-          <h2>1. Application</h2>
+          <h2>Application</h2>
           <p>
             These rules apply to all persons who generate, collect, receive, store, transport, treat, dispose, or handle bio‑medical waste in any form.
           </p>
@@ -31,7 +31,7 @@ export default function LawsRegulations() {
       </section>
       <section className="about-why-choose">
         <div className="container">
-          <h2>2. Definitions</h2>
+          <h2>Definitions</h2>
           <ul className="reasons-list">
             <li><strong>Act:</strong> Environment (Protection) Act, 1986 (29 of 1986).</li>
             <li><strong>Animal House:</strong> Place where animals are reared/kept for experiments or testing purposes.</li>
@@ -43,7 +43,7 @@ export default function LawsRegulations() {
       </section>
       <section className="about-why-choose">
         <div className="container">
-          <h2>3. Duty of Occupier</h2>
+          <h2>Duty of Occupier</h2>
           <p>
             Every occupier of an institution generating biomedical waste (hospital, nursing home, clinic, dispensary, veterinary institution, animal house, pathological laboratory, blood bank, etc.) shall ensure handling without adverse effects on human health and the environment.
           </p>
@@ -51,7 +51,7 @@ export default function LawsRegulations() {
       </section>
       <section className="about-why-choose">
         <div className="container">
-          <h2>4. Treatment and Disposal</h2>
+          <h2>Treatment and Disposal</h2>
           <p>
             Biomedical waste shall be treated and disposed of per Schedule I and standards in Schedule V. Occupiers shall set up requisite treatment facilities (incinerator, autoclave, microwave) or ensure treatment at common facilities.
           </p>
@@ -59,7 +59,7 @@ export default function LawsRegulations() {
       </section>
       <section className="about-why-choose">
         <div className="container">
-          <h2>5. Segregation, Packing, Transportation and Storage</h2>
+          <h2>Segregation, Packing, Transportation and Storage</h2>
           <ul className="reasons-list">
             <li>Do not mix biomedical waste with other wastes.</li>
             <li>Segregate into containers/bags at point of generation per Schedule II before storage, transport, treatment, disposal.</li>
@@ -70,7 +70,7 @@ export default function LawsRegulations() {
       </section>
       <section className="about-why-choose">
         <div className="container">
-          <h2>6. Prescribed Authority</h2>
+          <h2>Prescribed Authority</h2>
           <p>
             Each State/UT shall establish a prescribed authority for authorization and implementation, designate a chairperson if multi‑member, and ensure operation under State/UT supervision. Authorizations typically last three years (initial one‑year trial), with renewals thereafter.
           </p>
@@ -78,7 +78,7 @@ export default function LawsRegulations() {
       </section>
       <section className="about-why-choose">
         <div className="container">
-          <h2>7. Authorization</h2>
+          <h2>Authorization</h2>
           <p>
             Occupiers (except clinics/dispensaries/path labs/blood banks serving &lt; 1000 patients per month) and all operators must apply in Form I to the prescribed authority, with applicable fees.
           </p>
@@ -86,7 +86,7 @@ export default function LawsRegulations() {
       </section>
       <section className="about-why-choose">
         <div className="container">
-          <h2>8. Advisory Committee</h2>
+          <h2>Advisory Committee</h2>
           <p>
             States/UTs shall constitute an advisory committee including domain experts and SPCB/PCC representation to guide implementation of these rules.
           </p>
@@ -94,7 +94,7 @@ export default function LawsRegulations() {
       </section>
       <section className="about-why-choose">
         <div className="container">
-          <h2>9. Annual Report</h2>
+          <h2>Annual Report</h2>
           <p>
             Occupiers/operators must submit Form II by 31 January annually; prescribed authority compiles and submits to CPCB by 31 March.
           </p>
@@ -102,7 +102,7 @@ export default function LawsRegulations() {
       </section>
       <section className="about-why-choose">
         <div className="container">
-          <h2>10. Maintenance of Records</h2>
+          <h2>Maintenance of Records</h2>
           <p>
             Authorized persons shall maintain records of generation, collection, reception, storage, transport, treatment, disposal, and handling; subject to inspection by the prescribed authority.
           </p>
@@ -110,7 +110,7 @@ export default function LawsRegulations() {
       </section>
       <section className="about-why-choose">
         <div className="container">
-          <h2>11. Accident Reporting</h2>
+          <h2>Accident Reporting</h2>
           <p>
             Accidents at any institution/facility/site or during transport must be reported forthwith in Form III to the prescribed authority.
           </p>
@@ -118,7 +118,7 @@ export default function LawsRegulations() {
       </section>
       <section className="about-why-choose">
         <div className="container">
-          <h2>12. Appeal</h2>
+          <h2>Appeal</h2>
           <p>
             Aggrieved persons may appeal within 30 days to the authority constituted by the State/UT Government. Appeals beyond 30 days may be entertained if sufficient cause is shown.
           </p>

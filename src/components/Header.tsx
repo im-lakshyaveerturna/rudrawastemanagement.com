@@ -29,26 +29,26 @@ function Header({ currentPage, onNavigate }: HeaderProps) {
         </div>
         <nav className="nav-buttons">
           <button
-            className={currentPage === 'Home' ? 'active' : ''}
+            className={`btn-glass ${currentPage === 'Home' ? 'active' : ''}`}
             onClick={() => onNavigate('Home')}
           >
             Home
           </button>
           <div className={`dropdown ${aboutActive ? 'active-parent' : ''}`}>
             <button
-              className={aboutActive ? 'active' : ''}
+              className={`btn-glass ${aboutActive ? 'active' : ''}`}
             >
               About Us ▾
             </button>
             <div className="dropdown-menu">
               <button
-                className={currentPage === 'Who We Are' ? 'active' : ''}
+                className={`btn-glass ${currentPage === 'Who We Are' ? 'active' : ''}`}
                 onClick={() => onNavigate('Who We Are')}
               >
                 Who We Are
               </button>
               <button
-                className={currentPage === 'Laws & Regulations' ? 'active' : ''}
+                className={`btn-glass ${currentPage === 'Laws & Regulations' ? 'active' : ''}`}
                 onClick={() => onNavigate('Laws & Regulations')}
               >
                 Laws & Procedures
@@ -56,13 +56,13 @@ function Header({ currentPage, onNavigate }: HeaderProps) {
             </div>
           </div>
           <button
-            className={currentPage === 'Gallery' ? 'active' : ''}
+            className={`btn-glass ${currentPage === 'Gallery' ? 'active' : ''}`}
             onClick={() => onNavigate('Gallery')}
           >
             Gallery
           </button>
           <button
-            className={currentPage === 'Contact Us' ? 'active' : ''}
+            className={`btn-glass ${currentPage === 'Contact Us' ? 'active' : ''}`}
             onClick={() => onNavigate('Contact Us')}
           >
             Contact Us

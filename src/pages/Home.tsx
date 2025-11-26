@@ -3,7 +3,8 @@ import wasteCollectionImg from '../assets/Gemini_Generated_Image_410zbf410zbf410
 import wasteTreatmentImg from '../assets/Waste_Treatment.png'
 import consultancyImg from '../assets/Consultancy.png'
 import { SplitText } from '../components/SplitText'
-import { motion } from 'framer-motion'
+// framer-motion not used for CTA anymore
+import CountUp from '../components/CountUp'
 
 // Gallery removed from Home page per request
 
@@ -24,15 +25,12 @@ function Home({ onContactClick }: HomeProps) {
             delay={0.05}
             as="p"
           />
-          <motion.button 
+          <button 
             className="cta-button" 
             onClick={onContactClick}
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.8, duration: 0.5 }}
           >
             Contact Us
-          </motion.button>
+          </button>
         </div>
       </section>
 
@@ -98,11 +96,15 @@ function Home({ onContactClick }: HomeProps) {
             </p>
             <div className="stats-grid">
               <div className="stat-item">
-                <div className="stat-number">10+</div>
+                <div className="stat-number">
+                  <CountUp from={0} to={10} duration={2} />+
+                </div>
                 <div className="stat-label">Years Experience</div>
               </div>
               <div className="stat-item">
-                <div className="stat-number">5000+</div>
+                <div className="stat-number">
+                  <CountUp from={0} to={500} duration={2} separator="," />+
+                </div>
                 <div className="stat-label">Happy Clients</div>
               </div>
               <div className="stat-item">

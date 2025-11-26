@@ -93,15 +93,16 @@
 }
 
 .nav-buttons button {
-  padding: 0.7rem 1.8rem;
+  padding: 0.9rem 1.6rem;
   background-color: transparent;
   border: none;
-  border-radius: 6px;
+  border-radius: 15px;
   font-size: 0.95rem;
   font-weight: 700;
   color: #ffffff;
   cursor: pointer;
-  transition: background-color 0.2s ease;
+  transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
+  position: relative;
 }
 
 .nav-buttons button:hover {
@@ -112,4 +113,60 @@
 .nav-buttons button.active {
   background-color: #029e12;
   color: white;
+}
+
+/* Glossy green button style inspired by provided snippet */
+.btn-glass {
+  position: relative;
+  background: transparent;
+  border: 1px solid rgba(255,255,255,0.15);
+}
+.btn-glass::after { display: none; }
+.btn-glass:hover,
+.btn-glass.active {
+  background: linear-gradient(180deg, #079c17 0%, #067611 70%, #02540b 100%);
+  box-shadow: 0 6px 16px rgba(0,0,0,0.25);
+  transform: translateY(-2px);
+}
+.btn-glass:hover::after,
+.btn-glass.active::after {
+  content: '';
+  position: absolute;
+  left: 12px;
+  right: 12px;
+  top: 10px;
+  height: 36%;
+  border-radius: 12px;
+  background: linear-gradient(180deg, rgba(255,255,255,0.35) 0%, rgba(255,255,255,0.08) 100%);
+  pointer-events: none;
+}
+.dropdown-menu {
+  /* ensure dropdown buttons use same radius */
+  border-radius: 12px;
+}
+.dropdown-menu button.btn-glass {
+  width: 100%;
+  text-align: left;
+  padding: 0.6rem 0.9rem;
+}
+.dropdown-menu button.btn-glass.active,
+.nav-buttons .btn-glass.active {
+  background: linear-gradient(180deg, #079c17 0%, #067611 70%, #02540b 100%);
+}
+
+/* Persistent green style for Contact Us */
+.btn-primary {
+  background: linear-gradient(180deg, #079c17 0%, #067611 70%, #02540b 100%);
+  box-shadow: 0 6px 16px rgba(0,0,0,0.25);
+}
+.btn-primary::after {
+  content: '';
+  position: absolute;
+  left: 8px;
+  right: 8px;
+  top: 8px;
+  height: 40%;
+  border-radius: 10px;
+  background: linear-gradient(180deg, rgba(255,255,255,0.35) 0%, rgba(255,255,255,0.06) 100%);
+  pointer-events: none;
 }
