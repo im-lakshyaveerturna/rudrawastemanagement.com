@@ -14,9 +14,9 @@ function Home({ onContactClick }: HomeProps) {
     <div className="home">
       <section className="hero-section">
         <div className="hero-content">
-          <SplitText text="Professional Waste Management Solutions" className="hero-title" />
+          <SplitText text="Biomedical Waste Management Solutions" className="hero-title" />
           <SplitText 
-            text="We provide reliable, sustainable, and environmentally responsible medical waste collection and disposal services for your community." 
+            text="We provide reliable, sustainable, and environmentally responsible biomedical waste collection and disposal services for your community." 
             className="hero-description" 
             delay={0.05}
             as="p"

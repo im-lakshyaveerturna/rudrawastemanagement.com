@@ -28,6 +28,12 @@ function Header({ currentPage, onNavigate }: HeaderProps) {
             About Us
           </button>
           <button
+            className={currentPage === 'Gallery' ? 'active' : ''}
+            onClick={() => onNavigate('Gallery')}
+          >
+            Gallery
+          </button>
+          <button
             className={currentPage === 'Contact Us' ? 'active' : ''}
             onClick={() => onNavigate('Contact Us')}
           >

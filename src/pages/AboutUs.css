@@ -28,29 +28,58 @@
   padding: 6rem 2rem;
 }
 
-.story-content {
-  max-width: 900px;
-  margin: 0 auto;
-}
-
-.story-content h2 {
+.about-story h2 {
   font-size: 2.5rem;
   font-weight: 700;
   color: #1a1a1a;
-  margin-bottom: 2rem;
+  margin-bottom: 1.5rem;
   text-align: center;
 }
 
-.story-content p {
+.about-story p {
+  max-width: 900px;
+  margin: 0 auto 1.5rem;
   font-size: 1.1rem;
   line-height: 1.8;
   color: #444;
-  margin-bottom: 1.5rem;
+  text-align: center;
 }
 
 .about-mission {
   background-color: #f0f8f1;
   padding: 6rem 2rem;
+}
+
+.about-mission h2,
+.about-drives h2,
+.about-services h2,
+.about-commitment h2,
+.about-why-choose h2 {
+  font-size: 2.2rem;
+  font-weight: 700;
+  color: #1a1a1a;
+  text-align: center;
+  margin-bottom: 1.5rem;
+}
+
+.muted {
+  color: #067611;
+  opacity: 0.8;
+  font-size: 0.95rem;
+}
+
+.services-list,
+.reasons-list {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding-left: 1rem;
+}
+
+.services-list li,
+.reasons-list li {
+  margin-bottom: 1rem;
+  line-height: 1.7;
+  color: #444;
 }
 
 .mission-grid {
@@ -140,7 +169,7 @@
   margin: 0;
 }
 
-.about-team {
+.about-commitment {
   background-color: #f0f8f1;
   padding: 6rem 2rem;
 }
@@ -175,9 +204,9 @@
     font-size: 1.1rem;
   }
 
-  .story-content h2,
+  .about-story h2,
   .about-why-choose h2,
-  .about-team h2 {
+  .about-commitment h2 {
     font-size: 2rem;
   }
 
