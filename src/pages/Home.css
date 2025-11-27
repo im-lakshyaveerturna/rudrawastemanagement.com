@@ -65,19 +65,8 @@
   transition: transform 0.2s ease, box-shadow 0.2s ease;
   border: none;
   position: relative;
-  background: linear-gradient(180deg, #079c17 0%, #067611 70%, #02540b 100%);
+  background-color: #029e12;
   box-shadow: 0 6px 16px rgba(0,0,0,0.25);
-}
-.cta-button::after {
-  content: '';
-  position: absolute;
-  left: 12px;
-  right: 12px;
-  top: 10px;
-  height: 36%;
-  border-radius: 12px;
-  background: linear-gradient(180deg, rgba(255,255,255,0.35) 0%, rgba(255,255,255,0.08) 100%);
-  pointer-events: none;
 }
 .cta-button:hover {
   transform: translateY(-3px);

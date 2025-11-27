@@ -13,16 +13,16 @@ import image9 from '../assets/gallery/iamge-9.jpeg'
 import image10 from '../assets/gallery/image-10.jpeg'
 
 const images = [
-  { image: image1, text: 'Facility 1' },
-  { image: image2, text: 'Facility 2' },
-  { image: image3, text: 'Facility 3' },
-  { image: image4, text: 'Facility 4' },
-  { image: image5, text: 'Facility 5' },
-  { image: image6, text: 'Facility 6' },
-  { image: image7, text: 'Facility 7' },
-  { image: image8, text: 'Facility 8' },
-  { image: image9, text: 'Facility 9' },
-  { image: image10, text: 'Facility 10' },
+  { image: image1, text: 'Biomedical waste collection vehicle and facility' },
+  { image: image2, text: 'Waste treatment autoclave equipment' },
+  { image: image3, text: 'Medical waste segregation and storage area' },
+  { image: image4, text: 'Incineration facility for hazardous waste' },
+  { image: image5, text: 'Waste collection team with safety gear' },
+  { image: image6, text: 'Shredding and volume reduction equipment' },
+  { image: image7, text: 'Emission control scrubber system' },
+  { image: image8, text: 'Waste treatment processing facility' },
+  { image: image9, text: 'Color-coded biomedical waste containers' },
+  { image: image10, text: 'Waste management facility operations' },
 ]
 
 function Gallery() {

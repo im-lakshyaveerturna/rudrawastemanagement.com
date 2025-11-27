@@ -3,7 +3,7 @@ import wasteCollectionImg from '../assets/Gemini_Generated_Image_410zbf410zbf410
 import wasteTreatmentImg from '../assets/Waste_Treatment.png'
 import consultancyImg from '../assets/Consultancy.png'
 import { SplitText } from '../components/SplitText'
-// framer-motion not used for CTA anymore
+import { motion } from 'framer-motion'
 import CountUp from '../components/CountUp'
 
 // Gallery removed from Home page per request
@@ -25,12 +25,15 @@ function Home({ onContactClick }: HomeProps) {
             delay={0.05}
             as="p"
           />
-          <button 
+          <motion.button 
             className="cta-button" 
             onClick={onContactClick}
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.8, duration: 0.5 }}
           >
             Contact Us
-          </button>
+          </motion.button>
         </div>
       </section>
 
@@ -39,8 +42,8 @@ function Home({ onContactClick }: HomeProps) {
           <h2 className="section-title">Our Services</h2>
           {/* Waste Collection Section */}
           <section className="service-block" id="waste-collection">
-            <div className="service-image-placeholder" aria-label="Waste Collection image placeholder">
-              <img src={wasteCollectionImg} alt="Waste Collection" className="service-image" />
+            <div className="service-image-placeholder" aria-label="Biomedical waste collection service">
+              <img src={wasteCollectionImg} alt="Biomedical waste collection technicians handling medical waste with proper safety equipment in Muzaffarnagar" className="service-image" loading="lazy" />
             </div>
             <div className="service-content">
               <h3>Waste Collection</h3>
@@ -63,14 +66,14 @@ function Home({ onContactClick }: HomeProps) {
                 Treatment is carried out using approved technologies based on the waste category—autoclaving and shredding for infectious waste, high-temperature incineration for anatomical and pharmaceutical waste, and chemical disinfection for select liquid streams. Treated materials are rendered non-infectious and unrecognisable before being sent for safe disposal or recycling. All treatment data, including processing logs and emission-monitoring results, are recorded and shared with clients to ensure full environmental and regulatory compliance.
               </p>
             </div>
-            <div className="service-image-placeholder" aria-label="Waste Treatment image placeholder">
-              <img src={wasteTreatmentImg} alt="Waste Treatment" className="service-image" />
+            <div className="service-image-placeholder" aria-label="Biomedical waste treatment facility">
+              <img src={wasteTreatmentImg} alt="Biomedical waste treatment facility with autoclave and incineration equipment for safe medical waste disposal" className="service-image" loading="lazy" />
             </div>
           </section>
           {/* Consultancy Services Section */}
           <section className="service-block" id="consultancy-services">
-            <div className="service-image-placeholder" aria-label="Consultancy Services image placeholder">
-              <img src={consultancyImg} alt="Consultancy Services" className="service-image" />
+            <div className="service-image-placeholder" aria-label="Waste management consultancy services">
+              <img src={consultancyImg} alt="Professional waste management consultancy and compliance support for healthcare facilities" className="service-image" loading="lazy" />
             </div>
             <div className="service-content">
               <h3>Consultancy Services</h3>
