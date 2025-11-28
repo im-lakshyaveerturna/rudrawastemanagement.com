@@ -46,24 +46,36 @@ function Home({ onContactClick }: HomeProps) {
               <img src={wasteCollectionImg} alt="Biomedical waste collection technicians handling medical waste with proper safety equipment in Muzaffarnagar" className="service-image" loading="lazy" />
             </div>
             <div className="service-content">
-              <h3>Waste Collection</h3>
+              <h3>Door to Door Collection & Transport</h3>
               <p>
-                Our facility operates a scheduled, compliant, and fully traceable medical-waste collection system designed for hospitals of all sizes. Each client is assigned colour-coded, UN-approved containers for segregated waste streams—including sharps, infectious waste, pathological waste, and pharmaceutical discards. Once containers are sealed by hospital staff, our certified collection team arrives in GPS-tracked vehicles, verifies container integrity, scans each unit into our digital manifesting system, and ensures all handover documentation is completed according to Bio-Medical Waste Management Rules.
+                We provide comprehensive biomedical waste collection services designed for hospitals, nursing homes, clinics, dispensaries, veterinary institutions, pathological laboratories, and blood banks across Muzaffarnagar and surrounding regions. Our collection system ensures full compliance with the Bio-Medical Waste (Management & Handling) Rules enacted under the Environment (Protection) Act, 1986.
               </p>
               <p>
-                Collected waste is transported through predefined routes to minimise risk and ensure rapid turnaround. Throughout the journey, temperature-controlled storage (where applicable), secure loading protocols, and continuous monitoring maintain full chain-of-custody. Upon arrival at our treatment facility, the waste is processed using standard methods such as autoclaving, shredding, or incineration, and clients receive automated compliance reports for their records.
+                Each healthcare facility receives color-coded containers and bags per Schedule II requirements for proper waste segregation at the point of generation. Our trained collection team arrives in authorized vehicles, verifies container integrity and labeling per Schedule III, scans each unit into our digital manifesting system, and completes all handover documentation including Schedule IV transportation details. Waste is never mixed with general refuse and is transported through predefined routes to minimize risk while maintaining full chain-of-custody documentation.
+              </p>
+              <p>
+                We serve healthcare facilities of all sizes—from large hospitals generating substantial volumes to smaller clinics treating fewer than 1000 patients per month. Our zero-compromise safety practices, documented standard operating procedures, and adherence to local regulations ensure that your facility remains compliant with authorization requirements while protecting healthcare workers, the public, and the environment from biomedical waste hazards.
               </p>
             </div>
           </section>
           {/* Waste Treatment Section */}
           <section className="service-block" id="waste-treatment">
             <div className="service-content">
-              <h3>Waste Treatment</h3>
+              <h3>Comprehensive Waste Treatment</h3>
               <p>
-                Our facility follows a controlled, regulation-aligned workflow for handling and treating medical waste from the moment it arrives. Each container is bar-code–verified against its digital manifest, weighed, and inspected to confirm proper segregation. Waste streams are then directed to dedicated processing zones to avoid cross-contamination, and our trained technicians use PPE and standardized SOPs throughout every stage of handling.
+                Our state-of-the-art treatment facility in Muzaffarnagar operates under strict compliance with Bio-Medical Waste Management Rules and Schedule V treatment standards. From the moment waste arrives, each container undergoes barcode verification against its digital manifest, weighing, and inspection to confirm proper segregation per Schedule I waste categories. Waste streams are directed to dedicated processing zones to prevent cross-contamination, with trained technicians following documented SOPs and wearing appropriate personal protective equipment throughout every stage.
               </p>
               <p>
-                Treatment is carried out using approved technologies based on the waste category—autoclaving and shredding for infectious waste, high-temperature incineration for anatomical and pharmaceutical waste, and chemical disinfection for select liquid streams. Treated materials are rendered non-infectious and unrecognisable before being sent for safe disposal or recycling. All treatment data, including processing logs and emission-monitoring results, are recorded and shared with clients to ensure full environmental and regulatory compliance.
+                <strong>Bio-medical Incinerator:</strong> Our high-temperature incineration system safely disposes of anatomical waste, pharmaceutical waste, and other hazardous categories requiring thermal destruction. The process renders waste non-infectious and unrecognizable while meeting emission standards.
+              </p>
+              <p>
+                <strong>Autoclave & Shredding:</strong> Infectious biomedical waste undergoes steam sterilization in our autoclave system, effectively eliminating pathogens. Post-treatment, materials pass through advanced shredding equipment for volume reduction and to ensure complete destruction, preventing any potential reuse.
+              </p>
+              <p>
+                <strong>Scrubber (Stack Emission Control):</strong> All emissions from our treatment processes pass through state-of-the-art scrubber systems that capture particulates and neutralize harmful gases before release, ensuring compliance with environmental safety standards and protecting air quality in the surrounding community.
+              </p>
+              <p>
+                Treatment logs, emission monitoring results, and compliance reports are meticulously recorded and provided to clients, supporting their annual reporting requirements under Form II. Our systematic approach addresses the critical challenge of biomedical waste management—protecting healthcare workers, the public, and the environment from the potential health hazards that arise from improper handling of hospital waste generated during patient care.
               </p>
             </div>
             <div className="service-image-placeholder" aria-label="Biomedical waste treatment facility">

@@ -31,13 +31,17 @@ function createTextTexture(gl: any, text: string, font = 'bold 30px monospace', 
   const metrics = context.measureText(text);
   const textWidth = Math.ceil(metrics.width);
   const textHeight = Math.ceil(parseInt(font, 10) * 1.2);
-  canvas.width = textWidth + 20;
-  canvas.height = textHeight + 20;
+  canvas.width = textWidth + 40;
+  canvas.height = textHeight + 30;
+  
+  // Add semi-transparent background
+  context.fillStyle = 'rgba(0, 0, 0, 0.75)';
+  context.fillRect(0, 0, canvas.width, canvas.height);
+  
   context.font = font;
   context.fillStyle = color;
   context.textBaseline = 'middle';
   context.textAlign = 'center';
-  context.clearRect(0, 0, canvas.width, canvas.height);
   context.fillText(text, canvas.width / 2, canvas.height / 2);
   const texture = new Texture(gl, { generateMipmaps: false });
   texture.image = canvas;
@@ -93,10 +97,10 @@ class Title {
     });
     this.mesh = new Mesh(this.gl, { geometry, program });
     const aspect = width / height;
-    const textHeight = this.plane.scale.y * 0.15;
+    const textHeight = this.plane.scale.y * 0.12;
     const textWidth = textHeight * aspect;
     this.mesh.scale.set(textWidth, textHeight, 1);
-    this.mesh.position.y = -this.plane.scale.y * 0.5 - textHeight * 0.5 - 0.05;
+    this.mesh.position.y = -this.plane.scale.y * 0.5 - textHeight * 0.5 - 0.1;
     this.mesh.setParent(this.plane);
   }
 }
