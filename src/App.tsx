@@ -1,4 +1,5 @@
-import { useState, useEffect } from 'react'
+import { useEffect } from 'react'
+import { Routes, Route, useNavigate, useLocation } from 'react-router-dom'
 import './App.css'
 import Header from './components/Header'
 import Home from './pages/Home'
@@ -9,34 +10,58 @@ import LawsRegulations from './pages/LawsRegulations'
 
 // SEO: Page metadata configuration
 const pageMetadata: Record<string, { title: string; description: string }> = {
-  'Home': {
+  '/': {
     title: 'Rudra Waste Management - Biomedical & Healthcare Waste Solutions | Muzaffarnagar',
     description: 'Professional biomedical waste management services in Muzaffarnagar, UP. Compliant collection, treatment, and disposal of healthcare waste.'
   },
-  'Who We Are': {
+  '/who-we-are': {
     title: 'About Us - Rudra Waste Management | Muzaffarnagar Waste Solutions',
     description: 'Learn about Rudra Waste Management, a trusted biomedical waste management company in Muzaffarnagar, UP. Expert services in waste collection, treatment, and disposal.'
   },
-  'Laws & Regulations': {
+  '/laws-regulations': {
     title: 'Biomedical Waste Laws & Regulations | Rudra Waste Management',
     description: 'Comprehensive guide to biomedical waste management rules, regulations, and compliance requirements in India. Expert insights from Rudra Waste Management.'
   },
-  'Gallery': {
+  '/gallery': {
     title: 'Gallery - Waste Management Facilities | Rudra Waste Management',
     description: 'View our state-of-the-art biomedical waste management facilities, equipment, and operations. Autoclaves, incinerators, and collection services.'
   },
-  'Contact Us': {
+  '/contact': {
     title: 'Contact Rudra Waste Management | Muzaffarnagar, UP',
     description: 'Get in touch with Rudra Waste Management for reliable biomedical waste management services in Muzaffarnagar and across Uttar Pradesh.'
   }
 }
 
-function App() {
-  const [currentPage, setCurrentPage] = useState('Home')
+// Map old state-based pages to routes
+const routeMapping: Record<string, string> = {
+  'Home': '/',
+  'Who We Are': '/who-we-are',
+  'Laws & Regulations': '/laws-regulations',
+  'Gallery': '/gallery',
+  'Contact Us': '/contact'
+}
 
-  // SEO: Update document title and meta description on page change
+function App() {
+  const navigate = useNavigate()
+  const location = useLocation()
+
+  // Get current page name from route
+  const getCurrentPage = (): string => {
+    const path = location.pathname
+    return Object.entries(routeMapping).find(([_, route]) => route === path)?.[0] || 'Home'
+  }
+
+  // Handle navigation with route support
+  const handleNavigate = (page: string) => {
+    const route = routeMapping[page]
+    if (route) {
+      navigate(route)
+    }
+  }
+
+  // SEO: Update document title and meta description on route change
   useEffect(() => {
-    const metadata = pageMetadata[currentPage]
+    const metadata = pageMetadata[location.pathname]
     if (metadata) {
       document.title = metadata.title
       
@@ -51,20 +76,22 @@ function App() {
         document.head.appendChild(metaDescription)
       }
     }
-  }, [currentPage])
+
+    // Scroll to top on route change
+    window.scrollTo(0, 0)
+  }, [location.pathname])
 
   return (
     <div className="app">
-      <Header currentPage={currentPage} onNavigate={setCurrentPage} />
+      <Header currentPage={getCurrentPage()} onNavigate={handleNavigate} />
       <main className="main-content">
-        {currentPage === 'Home' && (
-          <Home onContactClick={() => setCurrentPage('Contact Us')} />
-        )}
-        {/* About Us page removed; About Us acts as dropdown only */}
-        {currentPage === 'Who We Are' && <WhoWeAre />}
-        {currentPage === 'Laws & Regulations' && <LawsRegulations />}
-        {currentPage === 'Gallery' && <Gallery />}
-        {currentPage === 'Contact Us' && <ContactUs />}
+        <Routes>
+          <Route path="/" element={<Home onContactClick={() => handleNavigate('Contact Us')} />} />
+          <Route path="/who-we-are" element={<WhoWeAre />} />
+          <Route path="/laws-regulations" element={<LawsRegulations />} />
+          <Route path="/gallery" element={<Gallery />} />
+          <Route path="/contact" element={<ContactUs />} />
+        </Routes>
       </main>
     </div>
   )
