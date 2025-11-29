@@ -44,9 +44,6 @@
 }
 
 /* Hero tagline and CTA */
-.about-hero {
-  background: linear-gradient(180deg, #067611 0%, #01530a 100%);
-}
 .about-hero .hero-tagline {
   margin-top: 1rem;
   font-size: 1.125rem;
