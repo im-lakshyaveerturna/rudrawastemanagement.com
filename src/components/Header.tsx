@@ -62,6 +62,12 @@ function Header({ currentPage, onNavigate }: HeaderProps) {
             Gallery
           </button>
           <button
+            className={`btn-glass ${currentPage === 'Services' ? 'active' : ''}`}
+            onClick={() => onNavigate('Services')}
+          >
+            Services
+          </button>
+          <button
             className={`btn-glass ${currentPage === 'Contact Us' ? 'active' : ''}`}
             onClick={() => onNavigate('Contact Us')}
           >

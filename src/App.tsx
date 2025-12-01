@@ -7,6 +7,7 @@ import ContactUs from './pages/ContactUs'
 import Gallery from './pages/Gallery'
 import WhoWeAre from './pages/WhoWeAre'
 import LawsRegulations from './pages/LawsRegulations'
+import Services from './pages/Services'
 
 // SEO: Page metadata configuration
 const pageMetadata: Record<string, { title: string; description: string }> = {
@@ -29,6 +30,10 @@ const pageMetadata: Record<string, { title: string; description: string }> = {
   '/contact': {
     title: 'Contact Rudra Waste Management | Muzaffarnagar, UP',
     description: 'Get in touch with Rudra Waste Management for reliable biomedical waste management services in Muzaffarnagar and across Uttar Pradesh.'
+  },
+  '/services': {
+    title: 'Services - Biomedical Waste Solutions | Rudra Waste Management',
+    description: 'Door-to-door collection, autoclave sterilization, incineration, shredding, and emission control for compliant biomedical waste management.'
   }
 }
 
@@ -38,6 +43,7 @@ const routeMapping: Record<string, string> = {
   'Who We Are': '/who-we-are',
   'Laws & Regulations': '/laws-regulations',
   'Gallery': '/gallery',
+  'Services': '/services',
   'Contact Us': '/contact'
 }
 
@@ -90,6 +96,7 @@ function App() {
           <Route path="/who-we-are" element={<WhoWeAre />} />
           <Route path="/laws-regulations" element={<LawsRegulations />} />
           <Route path="/gallery" element={<Gallery />} />
+          <Route path="/services" element={<Services />} />
           <Route path="/contact" element={<ContactUs />} />
         </Routes>
       </main>
