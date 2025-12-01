@@ -39,7 +39,7 @@ function Home({ onContactClick }: HomeProps) {
         <div className="container services-vertical">
           <h2 className="section-title">Our Services</h2>
           {/* Waste Collection Section */}
-          <section className="service-block reveal-up" id="waste-collection">
+          <section className="service-block" id="waste-collection">
             <div className="service-image-placeholder" aria-label="Biomedical waste collection service">
               <img src={wasteCollectionImg} alt="Biomedical waste collection technicians handling medical waste with proper safety equipment in Muzaffarnagar" className="service-image" loading="lazy" />
             </div>
@@ -57,7 +57,7 @@ function Home({ onContactClick }: HomeProps) {
             </div>
           </section>
           {/* Waste Treatment Section */}
-          <section className="service-block reveal-up" id="waste-treatment">
+          <section className="service-block" id="waste-treatment">
             <div className="service-content">
               <h3>Comprehensive Waste Treatment</h3>
               <p>
@@ -81,7 +81,7 @@ function Home({ onContactClick }: HomeProps) {
             </div>
           </section>
           {/* Consultancy Services Section */}
-          <section className="service-block reveal-up" id="consultancy-services">
+          <section className="service-block" id="consultancy-services">
             <div className="service-image-placeholder" aria-label="Waste management consultancy services">
               <img src={consultancyImg} alt="Professional waste management consultancy and compliance support for healthcare facilities" className="service-image" loading="lazy" />
             </div>
@@ -108,19 +108,19 @@ function Home({ onContactClick }: HomeProps) {
               sets us apart in the industry.
             </p>
             <div className="stats-grid">
-              <div className="stat-item reveal-up">
+              <div className="stat-item">
                 <div className="stat-number">
                   <CountUp from={0} to={10} duration={2} />+
                 </div>
                 <div className="stat-label">Years Experience</div>
               </div>
-              <div className="stat-item reveal-up">
+              <div className="stat-item">
                 <div className="stat-number">
                   <CountUp from={0} to={500} duration={2} separator="," />+
                 </div>
                 <div className="stat-label">Happy Clients</div>
               </div>
-              <div className="stat-item reveal-up">
+              <div className="stat-item">
                 <div className="stat-number">24/7</div>
                 <div className="stat-label">Support Available</div>
               </div>
@@ -132,7 +132,7 @@ function Home({ onContactClick }: HomeProps) {
       {/* Certifications strip above footer */}
       <section className="certifications-bar">
         <div className="container certs-container" aria-label="Compliance and certifications">
-          <div className="cert-item reveal-up">
+          <div className="cert-item">
             <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
               <path d="M12 3l7 4v5c0 5-3.5 9-7 9s-7-4-7-9V7l7-4z" strokeLinecap="round" strokeLinejoin="round"></path>
               <path d="M9 12l2 2 4-4" strokeLinecap="round" strokeLinejoin="round"></path>
@@ -142,7 +142,7 @@ function Home({ onContactClick }: HomeProps) {
               <span>Central Pollution Control Board</span>
             </div>
           </div>
-          <div className="cert-item reveal-up">
+          <div className="cert-item">
             <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
               <path d="M12 3l7 4v5c0 5-3.5 9-7 9s-7-4-7-9V7l7-4z" strokeLinecap="round" strokeLinejoin="round"></path>
               <path d="M9 12l2 2 4-4" strokeLinecap="round" strokeLinejoin="round"></path>
@@ -152,7 +152,7 @@ function Home({ onContactClick }: HomeProps) {
               <span>State Pollution Control Board</span>
             </div>
           </div>
-          <div className="cert-item reveal-up">
+          <div className="cert-item">
             <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
               <path d="M12 3l7 4v5c0 5-3.5 9-7 9s-7-4-7-9V7l7-4z" strokeLinecap="round" strokeLinejoin="round"></path>
               <path d="M9 12l2 2 4-4" strokeLinecap="round" strokeLinejoin="round"></path>
