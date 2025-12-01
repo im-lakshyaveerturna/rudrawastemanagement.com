@@ -2,8 +2,7 @@ import './Home.css'
 import wasteCollectionImg from '../assets/Gemini_Generated_Image_410zbf410zbf410z.png'
 import wasteTreatmentImg from '../assets/Waste_Treatment.png'
 import consultancyImg from '../assets/Consultancy.png'
-import { SplitText } from '../components/SplitText'
-import { motion } from 'framer-motion'
+ 
 import CountUp from '../components/CountUp'
 
 // Gallery removed from Home page per request
@@ -18,22 +17,21 @@ function Home({ onContactClick }: HomeProps) {
     <div className="home">
       <section className="hero-section">
         <div className="hero-content">
-          <SplitText text="Biomedical Waste Management Solutions" className="hero-title" />
-          <SplitText 
-            text="We provide reliable, sustainable, and environmentally responsible biomedical waste collection and disposal services for your community." 
-            className="hero-description" 
-            delay={0.05}
-            as="p"
-          />
-          <motion.button 
-            className="cta-button" 
+          <h1 className="hero-title">Biomedical Waste Management Solutions</h1>
+          <div className="hero-badges" aria-label="Compliance badges">
+            <span className="badge">CPCB</span>
+            <span className="badge">SPCB Authorized</span>
+            <span className="badge">BMWM Rules Compliant</span>
+          </div>
+          <p className="hero-description">
+            We provide reliable, sustainable, and environmentally responsible biomedical waste collection and disposal services for your community.
+          </p>
+          <button
+            className="cta-button"
             onClick={onContactClick}
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.8, duration: 0.5 }}
           >
             Contact Us
-          </motion.button>
+          </button>
         </div>
       </section>
 
@@ -41,7 +39,7 @@ function Home({ onContactClick }: HomeProps) {
         <div className="container services-vertical">
           <h2 className="section-title">Our Services</h2>
           {/* Waste Collection Section */}
-          <section className="service-block" id="waste-collection">
+          <section className="service-block reveal-up" id="waste-collection">
             <div className="service-image-placeholder" aria-label="Biomedical waste collection service">
               <img src={wasteCollectionImg} alt="Biomedical waste collection technicians handling medical waste with proper safety equipment in Muzaffarnagar" className="service-image" loading="lazy" />
             </div>
@@ -59,7 +57,7 @@ function Home({ onContactClick }: HomeProps) {
             </div>
           </section>
           {/* Waste Treatment Section */}
-          <section className="service-block" id="waste-treatment">
+          <section className="service-block reveal-up" id="waste-treatment">
             <div className="service-content">
               <h3>Comprehensive Waste Treatment</h3>
               <p>
@@ -83,7 +81,7 @@ function Home({ onContactClick }: HomeProps) {
             </div>
           </section>
           {/* Consultancy Services Section */}
-          <section className="service-block" id="consultancy-services">
+          <section className="service-block reveal-up" id="consultancy-services">
             <div className="service-image-placeholder" aria-label="Waste management consultancy services">
               <img src={consultancyImg} alt="Professional waste management consultancy and compliance support for healthcare facilities" className="service-image" loading="lazy" />
             </div>
@@ -105,27 +103,63 @@ function Home({ onContactClick }: HomeProps) {
           <div className="about-content">
             <h2 className="section-title">Why Choose Rudra?</h2>
             <p className="about-text">
-              With years of experience in waste management, we provide reliable and sustainable solutions
+              With years of experience in biomedical waste management, we provide reliable and sustainable solutions
               that help keep your community clean and healthy. Our commitment to environmental responsibility
               sets us apart in the industry.
             </p>
             <div className="stats-grid">
-              <div className="stat-item">
+              <div className="stat-item reveal-up">
                 <div className="stat-number">
                   <CountUp from={0} to={10} duration={2} />+
                 </div>
                 <div className="stat-label">Years Experience</div>
               </div>
-              <div className="stat-item">
+              <div className="stat-item reveal-up">
                 <div className="stat-number">
                   <CountUp from={0} to={500} duration={2} separator="," />+
                 </div>
                 <div className="stat-label">Happy Clients</div>
               </div>
-              <div className="stat-item">
+              <div className="stat-item reveal-up">
                 <div className="stat-number">24/7</div>
                 <div className="stat-label">Support Available</div>
               </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Certifications strip above footer */}
+      <section className="certifications-bar">
+        <div className="container certs-container" aria-label="Compliance and certifications">
+          <div className="cert-item reveal-up">
+            <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+              <path d="M12 3l7 4v5c0 5-3.5 9-7 9s-7-4-7-9V7l7-4z" strokeLinecap="round" strokeLinejoin="round"></path>
+              <path d="M9 12l2 2 4-4" strokeLinecap="round" strokeLinejoin="round"></path>
+            </svg>
+            <div className="cert-text">
+              <strong>CPCB</strong>
+              <span>Central Pollution Control Board</span>
+            </div>
+          </div>
+          <div className="cert-item reveal-up">
+            <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+              <path d="M12 3l7 4v5c0 5-3.5 9-7 9s-7-4-7-9V7l7-4z" strokeLinecap="round" strokeLinejoin="round"></path>
+              <path d="M9 12l2 2 4-4" strokeLinecap="round" strokeLinejoin="round"></path>
+            </svg>
+            <div className="cert-text">
+              <strong>SPCB</strong>
+              <span>State Pollution Control Board</span>
+            </div>
+          </div>
+          <div className="cert-item reveal-up">
+            <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+              <path d="M12 3l7 4v5c0 5-3.5 9-7 9s-7-4-7-9V7l7-4z" strokeLinecap="round" strokeLinejoin="round"></path>
+              <path d="M9 12l2 2 4-4" strokeLinecap="round" strokeLinejoin="round"></path>
+            </svg>
+            <div className="cert-text">
+              <strong>BMWM Rules</strong>
+              <span>Biomedical Waste Management</span>
             </div>
           </div>
         </div>
