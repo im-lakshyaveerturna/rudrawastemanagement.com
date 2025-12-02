@@ -2,11 +2,11 @@ import { useState } from 'react'
 import './Gallery.css'
 import CircularGallery from '../../components/CircularGallery'
 import image1 from '../../assets/gallery/image-1.jpg'
+import image2 from '../../assets/gallery/image-2.jpg'
 import image3 from '../../assets/gallery/image-3.jpg'
 import image4 from '../../assets/gallery/image-4.jpg'
-import image5 from '../../assets/gallery/image-5.jpg'
-import image9 from '../../assets/gallery/iamge-9.jpeg'
-import image10 from '../../assets/gallery/image-10.jpeg'
+import image5 from '../../assets/gallery/image-5.jpeg'
+import image6 from '../../assets/gallery/image-6.jpeg'
 // Services images to include in gallery
 import svcCollection from '../../assets/services/doortodoor.png'
 import svcIncinerator from '../../assets/services/incinerator.png'
@@ -23,11 +23,11 @@ const images = [
   { image: svcScrubber, text: 'Scrubber system for stack emission control ensuring air safety' },
   // Remaining gallery visuals
   { image: image1, text: 'Biomedical waste collection vehicle and facility' },
-  { image: image3, text: 'Medical waste segregation and storage area' },
-  { image: image4, text: 'Incineration facility for hazardous waste' },
-  { image: image5, text: 'Waste collection team with safety gear' },
-  { image: image9, text: 'Color-coded biomedical waste containers' },
-  { image: image10, text: 'Waste management facility operations' },
+  { image: image2, text: 'Medical waste segregation and storage area' },
+  { image: image3, text: 'Incineration facility for hazardous waste' },
+  { image: image4, text: 'Waste collection team with safety gear' },
+  { image: image5, text: 'Color-coded biomedical waste containers' },
+  { image: image6, text: 'Waste management facility operations' },
 ]
 
 function Gallery() {

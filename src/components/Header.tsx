@@ -1,5 +1,5 @@
 import './Header.css'
-import logo from '../assets/rudra-removebg-preview.png'
+import logo from '../assets/whoweare/rudra_pnglogo.png'
 
 interface HeaderProps {
   currentPage: string

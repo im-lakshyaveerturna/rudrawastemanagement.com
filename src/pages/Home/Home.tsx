@@ -1,7 +1,7 @@
 import './Home.css'
-import wasteCollectionImg from '../../assets/Gemini_Generated_Image_410zbf410zbf410z.png'
-import wasteTreatmentImg from '../../assets/Waste_Treatment.png'
-import consultancyImg from '../../assets/Consultancy.png'
+import wasteCollectionImg from '../../assets/home/waste_collection.png'
+import wasteTreatmentImg from '../../assets/home/waste_treatment.png'
+import consultancyImg from '../../assets/home/consultancy.png'
  
 import CountUp from '../../components/CountUp'
 

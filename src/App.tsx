@@ -8,6 +8,7 @@ import Gallery from './pages/Gallery/Gallery'
 import WhoWeAre from './pages/AboutUs/WhoWeAre/WhoWeAre'
 import LawsRegulations from './pages/AboutUs/LawsRegulations/LawsRegulations'
 import Services from './pages/Services/Services'
+import NotFound from './pages/NotFound/NotFound'
 
 // SEO: Page metadata configuration
 const pageMetadata: Record<string, { title: string; description: string }> = {
@@ -98,6 +99,7 @@ function App() {
           <Route path="/gallery" element={<Gallery />} />
           <Route path="/services" element={<Services />} />
           <Route path="/contact" element={<ContactUs />} />
+          <Route path="*" element={<NotFound />} />
         </Routes>
       </main>
     </div>

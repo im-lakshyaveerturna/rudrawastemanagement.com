@@ -1,9 +1,9 @@
 import './ContactUs.css'
 import FuzzyText from '../../components/FuzzyText'
-import locationIcon from '../../assets/location.png'
-import phoneIcon from '../../assets/phone-call.png'
-import emailIcon from '../../assets/gmail.png'
-import clockIcon from '../../assets/clock.png'
+import locationIcon from '../../assets/contact/location.png'
+import phoneIcon from '../../assets/contact/phone_call.png'
+import emailIcon from '../../assets/contact/gmail.png'
+import clockIcon from '../../assets/contact/clock.png'
 
 function ContactUs() {
   return (
