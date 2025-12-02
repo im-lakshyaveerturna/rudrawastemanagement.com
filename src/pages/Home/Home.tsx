@@ -1,9 +1,9 @@
 import './Home.css'
-import wasteCollectionImg from '../assets/Gemini_Generated_Image_410zbf410zbf410z.png'
-import wasteTreatmentImg from '../assets/Waste_Treatment.png'
-import consultancyImg from '../assets/Consultancy.png'
+import wasteCollectionImg from '../../assets/Gemini_Generated_Image_410zbf410zbf410z.png'
+import wasteTreatmentImg from '../../assets/Waste_Treatment.png'
+import consultancyImg from '../../assets/Consultancy.png'
  
-import CountUp from '../components/CountUp'
+import CountUp from '../../components/CountUp'
 
 // Gallery removed from Home page per request
 

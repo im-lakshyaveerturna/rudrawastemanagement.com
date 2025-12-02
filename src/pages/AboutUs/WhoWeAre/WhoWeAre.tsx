@@ -1,5 +1,5 @@
-import './AboutUs.css'
-import logo from '../assets/rudra-removebg-preview.png'
+import './WhoWeAre.css'
+import logo from '../../../assets/rudra-removebg-preview.png'
 
 export default function WhoWeAre() {
   return (

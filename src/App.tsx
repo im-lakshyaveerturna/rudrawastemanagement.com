@@ -2,12 +2,12 @@ import { useEffect } from 'react'
 import { Routes, Route, useNavigate, useLocation } from 'react-router-dom'
 import './App.css'
 import Header from './components/Header'
-import Home from './pages/Home'
-import ContactUs from './pages/ContactUs'
-import Gallery from './pages/Gallery'
-import WhoWeAre from './pages/WhoWeAre'
-import LawsRegulations from './pages/LawsRegulations'
-import Services from './pages/Services'
+import Home from './pages/Home/Home'
+import ContactUs from './pages/ContactUs/ContactUs'
+import Gallery from './pages/Gallery/Gallery'
+import WhoWeAre from './pages/AboutUs/WhoWeAre/WhoWeAre'
+import LawsRegulations from './pages/AboutUs/LawsRegulations/LawsRegulations'
+import Services from './pages/Services/Services'
 
 // SEO: Page metadata configuration
 const pageMetadata: Record<string, { title: string; description: string }> = {

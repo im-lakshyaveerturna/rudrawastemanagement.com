@@ -1,0 +1,99 @@
+.about-page {
+  width: 100%;
+  min-height: calc(100vh - 80px);
+}
+
+.about-hero {
+  background: linear-gradient(135deg, #0b6e16 0%, #029e12 60%, #1b8f2a 100%);
+  padding: 6rem 2rem 4rem;
+  text-align: center;
+  color: white;
+}
+.about-hero .container {
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+/* Shared hero logo styling for pages using logo in hero */
+.about-hero .page-logo {
+  max-width: 280px;
+  width: 100%;
+  height: auto;
+  display: inline-block;
+}
+
+/* Hero CTA spacer */
+.about-hero .hero-cta {
+  margin-top: 1.25rem;
+}
+
+.about-story {
+  background-color: #ffffff;
+  padding: 6rem 2rem;
+}
+
+.about-story h2 {
+  font-size: 2.4rem;
+  font-weight: 700;
+  color: #1a1a1a;
+  margin-bottom: 1.25rem;
+}
+
+.about-story p {
+  max-width: 900px;
+  margin: 0 auto 1.25rem;
+  font-size: 1.05rem;
+  line-height: 1.8;
+  color: #444;
+}
+
+/* Two-column intro layout */
+.story-grid {
+  display: grid;
+  grid-template-columns: 1fr 320px;
+  gap: 2.5rem;
+  align-items: start;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+.story-text h2 { text-align: left; font-size: 2.4rem; }
+.story-text p { text-align: left; margin: 0; }
+.story-quick { background: #f9fffa; border-radius: 10px; padding: 1.25rem; border: 1px solid #e6f4ea; }
+.quick-features { list-style: none; padding: 0; margin: 0; }
+.quick-features li { padding: 0.9rem 0; border-bottom: 1px dashed #e6f4ea; }
+.quick-features li:last-child { border-bottom: 0; }
+.quick-features li strong { display:block; color:#05640f; font-weight:700; margin-bottom:0.25rem; }
+.quick-features li span { color:#444; font-size:0.95rem; }
+
+.about-team {
+  background-color: #ffffff;
+  padding: 6rem 2rem;
+}
+.about-team .container { max-width: 1000px; margin: 0 auto; }
+.about-team h2 {
+  font-size: 2.2rem;
+  font-weight: 700;
+  color: #1a1a1a;
+  text-align: center;
+  margin-bottom: 1.25rem;
+}
+
+.commitment-content {
+  max-width: 900px;
+  margin: 0 auto;
+}
+.commitment-content p {
+  font-size: 1.1rem;
+  line-height: 1.8;
+  color: #444;
+  margin-bottom: 1.25rem;
+  text-align: center;
+}
+
+@media (max-width: 768px) {
+  .about-story,
+  .about-team { padding: 4rem 1.5rem; }
+
+  .about-hero .page-logo { max-width: 220px; }
+  .story-grid { grid-template-columns: 1fr; }
+}

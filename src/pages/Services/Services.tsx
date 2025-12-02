@@ -1,9 +1,9 @@
 import './Services.css'
-import imgCollection from '../assets/services/doortodoor.png'
-import imgIncinerator from '../assets/services/incinerator.png'
-import imgAutoclave from '../assets/services/autoclave.png'
-import imgShredding from '../assets/services/shredding.jpg'
-import imgScrubber from '../assets/services/SCRUB.png'
+import imgCollection from '../../assets/services/doortodoor.png'
+import imgIncinerator from '../../assets/services/incinerator.png'
+import imgAutoclave from '../../assets/services/autoclave.png'
+import imgShredding from '../../assets/services/shredding.jpg'
+import imgScrubber from '../../assets/services/SCRUB.png'
 
 export default function Services() {
   return (
