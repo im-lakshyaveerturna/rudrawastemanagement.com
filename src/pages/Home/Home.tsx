@@ -44,37 +44,89 @@ function Home({ onContactClick }: HomeProps) {
               <img src={wasteCollectionImg} alt="Biomedical waste collection technicians handling medical waste with proper safety equipment in Muzaffarnagar" className="service-image" loading="lazy" />
             </div>
             <div className="service-content">
-              <h3>Door to Door Collection & Transport</h3>
+              <div className="service-header">
+                <div className="service-icon">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                    <rect x="4" y="4" width="16" height="16" rx="2" />
+                    <path d="M9 9h6M9 13h6M9 17h6" />
+                    <circle cx="7" cy="19" r="1.5" />
+                    <circle cx="17" cy="19" r="1.5" />
+                  </svg>
+                </div>
+                <h3>Door to Door Collection</h3>
+              </div>
               <p>
                 We provide comprehensive biomedical waste collection services designed for hospitals, nursing homes, clinics, dispensaries, veterinary institutions, pathological laboratories, and blood banks across Muzaffarnagar and surrounding regions. Our collection system ensures full compliance with the Bio-Medical Waste (Management & Handling) Rules enacted under the Environment (Protection) Act, 1986.
               </p>
-              <p>
-                Each healthcare facility receives color-coded containers and bags per Schedule II requirements for proper waste segregation at the point of generation. Our trained collection team arrives in authorized vehicles, verifies container integrity and labeling per Schedule III, scans each unit into our digital manifesting system, and completes all handover documentation including Schedule IV transportation details. Waste is never mixed with general refuse and is transported through predefined routes to minimize risk while maintaining full chain-of-custody documentation.
-              </p>
-              <p>
-                We serve healthcare facilities of all sizes—from large hospitals generating substantial volumes to smaller clinics treating fewer than 1000 patients per month. Our zero-compromise safety practices, documented standard operating procedures, and adherence to local regulations ensure that your facility remains compliant with authorization requirements while protecting healthcare workers, the public, and the environment from biomedical waste hazards.
-              </p>
+              <div className="service-features">
+                <div className="feature-badge">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5">
+                    <polyline points="20 6 9 17 4 12" />
+                  </svg>
+                  <span>Color-coded containers per Schedule II</span>
+                </div>
+                <div className="feature-badge">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5">
+                    <polyline points="20 6 9 17 4 12" />
+                  </svg>
+                  <span>Authorized vehicles with GPS tracking</span>
+                </div>
+                <div className="feature-badge">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5">
+                    <polyline points="20 6 9 17 4 12" />
+                  </svg>
+                  <span>Digital manifesting & chain-of-custody</span>
+                </div>
+                <div className="feature-badge">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5">
+                    <polyline points="20 6 9 17 4 12" />
+                  </svg>
+                  <span>Zero-compromise safety practices</span>
+                </div>
+              </div>
             </div>
           </section>
           {/* Waste Treatment Section */}
           <section className="service-block" id="waste-treatment">
             <div className="service-content">
-              <h3>Comprehensive Waste Treatment</h3>
+              <div className="service-header">
+                <div className="service-icon">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                    <path d="M12 2v4M12 18v4M4.93 4.93l2.83 2.83M16.24 16.24l2.83 2.83M2 12h4M18 12h4M4.93 19.07l2.83-2.83M16.24 7.76l2.83-2.83" />
+                    <circle cx="12" cy="12" r="3" />
+                  </svg>
+                </div>
+                <h3>Comprehensive Waste Treatment</h3>
+              </div>
               <p>
-                Our state-of-the-art treatment facility in Muzaffarnagar operates under strict compliance with Bio-Medical Waste Management Rules and Schedule V treatment standards. From the moment waste arrives, each container undergoes barcode verification against its digital manifest, weighing, and inspection to confirm proper segregation per Schedule I waste categories. Waste streams are directed to dedicated processing zones to prevent cross-contamination, with trained technicians following documented SOPs and wearing appropriate personal protective equipment throughout every stage.
+                Our state-of-the-art treatment facility in Muzaffarnagar operates under strict compliance with Bio-Medical Waste Management Rules and Schedule V treatment standards. From the moment waste arrives, each container undergoes barcode verification against its digital manifest, weighing, and inspection to confirm proper segregation per Schedule I waste categories.
               </p>
-              <p>
-                <strong>Bio-medical Incinerator:</strong> Our high-temperature incineration system safely disposes of anatomical waste, pharmaceutical waste, and other hazardous categories requiring thermal destruction. The process renders waste non-infectious and unrecognizable while meeting emission standards.
-              </p>
-              <p>
-                <strong>Autoclave & Shredding:</strong> Infectious biomedical waste undergoes steam sterilization in our autoclave system, effectively eliminating pathogens. Post-treatment, materials pass through advanced shredding equipment for volume reduction and to ensure complete destruction, preventing any potential reuse.
-              </p>
-              <p>
-                <strong>Scrubber (Stack Emission Control):</strong> All emissions from our treatment processes pass through state-of-the-art scrubber systems that capture particulates and neutralize harmful gases before release, ensuring compliance with environmental safety standards and protecting air quality in the surrounding community.
-              </p>
-              <p>
-                Treatment logs, emission monitoring results, and compliance reports are meticulously recorded and provided to clients, supporting their annual reporting requirements under Form II. Our systematic approach addresses the critical challenge of biomedical waste management—protecting healthcare workers, the public, and the environment from the potential health hazards that arise from improper handling of hospital waste generated during patient care.
-              </p>
+              <div className="service-features">
+                <div className="feature-badge">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5">
+                    <polyline points="20 6 9 17 4 12" />
+                  </svg>
+                  <span>High-temperature incineration system</span>
+                </div>
+                <div className="feature-badge">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5">
+                    <polyline points="20 6 9 17 4 12" />
+                  </svg>
+                  <span>Autoclave steam sterilization</span>
+                </div>
+                <div className="feature-badge">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5">
+                    <polyline points="20 6 9 17 4 12" />
+                  </svg>
+                  <span>Advanced shredding for volume reduction</span>
+                </div>
+                <div className="feature-badge">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5">
+                    <polyline points="20 6 9 17 4 12" />
+                  </svg>
+                  <span>Emission control scrubber systems</span>
+                </div>
+              </div>
             </div>
             <div className="service-image-placeholder" aria-label="Biomedical waste treatment facility">
               <img src={wasteTreatmentImg} alt="Biomedical waste treatment facility with autoclave and incineration equipment for safe medical waste disposal" className="service-image" loading="lazy" />
@@ -86,13 +138,44 @@ function Home({ onContactClick }: HomeProps) {
               <img src={consultancyImg} alt="Professional waste management consultancy and compliance support for healthcare facilities" className="service-image" loading="lazy" />
             </div>
             <div className="service-content">
-              <h3>Consultancy Services</h3>
+              <div className="service-header">
+                <div className="service-icon">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                    <path d="M12 2L2 7l10 5 10-5-10-5z" />
+                    <path d="M2 17l10 5 10-5M2 12l10 5 10-5" />
+                  </svg>
+                </div>
+                <h3>Consultancy Services</h3>
+              </div>
               <p>
-                Our consultancy division assists healthcare organizations, entrepreneurs, and municipalities in establishing their own compliant medical-waste management facilities. We begin with a comprehensive feasibility assessment covering regulatory requirements, site selection, waste-volume forecasting, technology options, and estimated capital and operational costs. Based on this assessment, we design end-to-end system architectures—including plant layout, workflow engineering, equipment specifications, staffing plans, and compliance frameworks.
+                Our consultancy division assists healthcare organizations, entrepreneurs, and municipalities in establishing their own compliant medical-waste management facilities. We begin with a comprehensive feasibility assessment covering regulatory requirements, site selection, waste-volume forecasting, technology options, and estimated capital and operational costs.
               </p>
-              <p>
-                Once the project moves forward, we provide hands-on implementation support such as regulatory licensing guidance, vendor coordination, SOP development, staff training, digital tracking system setup, and readiness audits before commissioning. After the facility becomes operational, clients can opt for ongoing technical support, performance reviews, and compliance monitoring to ensure long-term efficiency and adherence to environmental and biomedical waste regulations.
-              </p>
+              <div className="service-features">
+                <div className="feature-badge">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5">
+                    <polyline points="20 6 9 17 4 12" />
+                  </svg>
+                  <span>Feasibility assessment & system design</span>
+                </div>
+                <div className="feature-badge">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5">
+                    <polyline points="20 6 9 17 4 12" />
+                  </svg>
+                  <span>Regulatory licensing guidance</span>
+                </div>
+                <div className="feature-badge">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5">
+                    <polyline points="20 6 9 17 4 12" />
+                  </svg>
+                  <span>Staff training & SOP development</span>
+                </div>
+                <div className="feature-badge">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5">
+                    <polyline points="20 6 9 17 4 12" />
+                  </svg>
+                  <span>Ongoing compliance monitoring</span>
+                </div>
+              </div>
             </div>
           </section>
         </div>
