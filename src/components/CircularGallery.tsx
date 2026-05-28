@@ -1,9 +1,26 @@
 import { Camera, Mesh, Plane, Program, Renderer, Texture, Transform } from 'ogl';
+import type { Geometry, OGLRenderingContext } from 'ogl';
 import { useEffect, useRef } from 'react';
 
-function debounce(func: (...args: any[]) => void, wait: number) {
+type GalleryItem = { image: string; text: string };
+
+type ScreenSize = { width: number; height: number };
+
+type ViewportSize = { width: number; height: number };
+
+type ScrollState = { ease: number; current: number; target: number; last: number; position?: number };
+
+type PointerEvent = MouseEvent | TouchEvent;
+
+type WheelEventWithLegacyDelta = WheelEvent & { wheelDelta?: number; detail?: number };
+
+type AnyFunction = (...args: unknown[]) => unknown;
+
+type BindableInstance = Record<string, unknown>;
+
+function debounce<T extends (...args: unknown[]) => void>(func: T, wait: number) {
   let timeout: ReturnType<typeof setTimeout>;
-  return function (this: any, ...args: any[]) {
+  return function (this: unknown, ...args: Parameters<T>) {
     clearTimeout(timeout);
     timeout = setTimeout(() => func.apply(this, args), wait);
   };
@@ -13,16 +30,24 @@ function lerp(p1: number, p2: number, t: number) {
   return p1 + (p2 - p1) * t;
 }
 
-function autoBind(instance: any) {
+function autoBind<T extends object>(instance: T) {
   const proto = Object.getPrototypeOf(instance);
   Object.getOwnPropertyNames(proto).forEach(key => {
-    if (key !== 'constructor' && typeof instance[key] === 'function') {
-      instance[key] = instance[key].bind(instance);
+    if (key !== 'constructor') {
+      const value = (instance as BindableInstance)[key];
+      if (typeof value === 'function') {
+        (instance as BindableInstance)[key] = (value as AnyFunction).bind(instance);
+      }
     }
   });
 }
 
-function createTextTexture(gl: any, text: string, font = 'bold 30px monospace', color = 'black') {
+function createTextTexture(
+  gl: OGLRenderingContext,
+  text: string,
+  font = 'bold 30px monospace',
+  color = 'black'
+) {
   const canvas = document.createElement('canvas');
   const context = canvas.getContext('2d')!;
   context.font = font;
@@ -46,16 +71,25 @@ function createTextTexture(gl: any, text: string, font = 'bold 30px monospace', 
   return { texture, width: canvas.width, height: canvas.height };
 }
 
+interface TitleOptions {
+  gl: OGLRenderingContext;
+  plane: Mesh;
+  renderer: Renderer;
+  text: string;
+  textColor?: string;
+  font?: string;
+}
+
 class Title {
-  gl: any;
-  plane: any;
-  renderer: any;
+  gl: OGLRenderingContext;
+  plane: Mesh;
+  renderer: Renderer;
   text: string;
   textColor: string;
   font: string;
-  mesh: any;
+  mesh!: Mesh;
 
-  constructor({ gl, plane, renderer, text, textColor = '#545050', font = '30px sans-serif' }: any) {
+  constructor({ gl, plane, renderer, text, textColor = '#545050', font = '30px sans-serif' }: TitleOptions) {
     autoBind(this);
     this.gl = gl;
     this.plane = plane;
@@ -105,23 +139,23 @@ class Title {
 
 class Media {
   extra = 0;
-  geometry: any;
-  gl: any;
+  geometry: Geometry;
+  gl: OGLRenderingContext;
   image: string;
   index: number;
   length: number;
-  renderer: any;
-  scene: any;
-  screen: any;
+  renderer: Renderer;
+  scene: Transform;
+  screen: ScreenSize;
   text: string;
-  viewport: any;
+  viewport: ViewportSize;
   bend: number;
   textColor: string;
   borderRadius: number;
   font: string;
-  program: any;
-  plane: any;
-  title: any;
+  program!: Program;
+  plane!: Mesh;
+  title!: Title;
   scale: number = 1;
   padding: number = 2;
   width: number = 0;
@@ -146,7 +180,22 @@ class Media {
     textColor,
     borderRadius = 0,
     font
-  }: any) {
+  }: {
+    geometry: Geometry;
+    gl: OGLRenderingContext;
+    image: string;
+    index: number;
+    length: number;
+    renderer: Renderer;
+    scene: Transform;
+    screen: ScreenSize;
+    text: string;
+    viewport: ViewportSize;
+    bend: number;
+    textColor: string;
+    borderRadius?: number;
+    font: string;
+  }) {
     this.geometry = geometry;
     this.gl = gl;
     this.image = image;
@@ -253,10 +302,10 @@ class Media {
       renderer: this.renderer,
       text: this.text,
       textColor: this.textColor,
-      fontFamily: this.font
+      font: this.font
     });
   }
-  update(scroll: any, direction: string) {
+  update(scroll: ScrollState, direction: 'left' | 'right') {
     this.plane.position.x = this.x - scroll.current - this.extra;
 
     const x = this.plane.position.x;
@@ -297,7 +346,7 @@ class Media {
       this.isBefore = this.isAfter = false;
     }
   }
-  onResize({ screen, viewport }: any = {}) {
+  onResize({ screen, viewport }: { screen?: ScreenSize; viewport?: ViewportSize } = {}) {
     if (screen) this.screen = screen;
     if (viewport) {
       this.viewport = viewport;
@@ -319,26 +368,26 @@ class Media {
 class App {
   container: HTMLElement;
   scrollSpeed: number;
-  scroll: { ease: number; current: number; target: number; last: number };
-  onCheckDebounce: (...args: any[]) => void;
-  renderer: any;
-  gl: any;
-  camera: any;
-  scene: any;
-  planeGeometry: any;
-  mediasImages: any[];
+  scroll: ScrollState;
+  onCheckDebounce: () => void;
+  renderer!: Renderer;
+  gl!: OGLRenderingContext;
+  camera!: Camera;
+  scene!: Transform;
+  planeGeometry!: Geometry;
+  mediasImages: GalleryItem[];
   medias: Media[];
-  screen: any;
-  viewport: any;
+  screen!: ScreenSize;
+  viewport!: ViewportSize;
   isDown: boolean = false;
   start: number = 0;
   raf: number = 0;
-  boundOnResize: any;
-  boundOnWheel: any;
-  boundOnTouchDown: any;
-  boundOnTouchMove: any;
-  boundOnTouchUp: any;
-  boundOnClick: any;
+  boundOnResize!: () => void;
+  boundOnWheel!: (event: WheelEventWithLegacyDelta) => void;
+  boundOnTouchDown!: (event: PointerEvent) => void;
+  boundOnTouchMove!: (event: PointerEvent) => void;
+  boundOnTouchUp!: (event: PointerEvent) => void;
+  boundOnClick?: () => void;
   onImageClick?: (index: number) => void;
   clickStartX: number = 0;
   clickStartY: number = 0;
@@ -354,7 +403,16 @@ class App {
       scrollSpeed = 2,
       scrollEase = 0.05,
       onImageClick
-    }: any = {}
+    }: {
+      items?: GalleryItem[];
+      bend?: number;
+      textColor?: string;
+      borderRadius?: number;
+      font?: string;
+      scrollSpeed?: number;
+      scrollEase?: number;
+      onImageClick?: (index: number) => void;
+    } = {}
   ) {
     document.documentElement.classList.remove('no-js');
     this.container = container;
@@ -397,7 +455,7 @@ class App {
       widthSegments: 100
     });
   }
-  createMedias(items: any[], bend = 1, textColor: string, borderRadius: number, font: string) {
+  createMedias(items: GalleryItem[] = [], bend = 1, textColor: string, borderRadius: number, font: string) {
     const galleryItems = items && items.length ? items : [];
     this.mediasImages = galleryItems.concat(galleryItems);
     this.medias = this.mediasImages.map((data, index) => {
@@ -419,23 +477,23 @@ class App {
       });
     });
   }
-  onTouchDown(e: any) {
+  onTouchDown(e: PointerEvent) {
     this.isDown = true;
-    (this.scroll as any).position = this.scroll.current;
-    this.start = e.touches ? e.touches[0].clientX : e.clientX;
-    this.clickStartX = e.touches ? e.touches[0].clientX : e.clientX;
-    this.clickStartY = e.touches ? e.touches[0].clientY : e.clientY;
+    const { x, y } = getPointerCoordinates(e);
+    this.scroll.position = this.scroll.current;
+    this.start = x;
+    this.clickStartX = x;
+    this.clickStartY = y;
   }
-  onTouchMove(e: any) {
+  onTouchMove(e: PointerEvent) {
     if (!this.isDown) return;
-    const x = e.touches ? e.touches[0].clientX : e.clientX;
+    const { x } = getPointerCoordinates(e);
     const distance = (this.start - x) * (this.scrollSpeed * 0.025);
-    this.scroll.target = (this.scroll as any).position + distance;
+    this.scroll.target = (this.scroll.position ?? this.scroll.current) + distance;
   }
-  onTouchUp(e: any) {
+  onTouchUp(e: PointerEvent) {
     this.isDown = false;
-    const endX = e.changedTouches ? e.changedTouches[0].clientX : e.clientX;
-    const endY = e.changedTouches ? e.changedTouches[0].clientY : e.clientY;
+    const { x: endX, y: endY } = getPointerCoordinates(e);
     const distX = Math.abs(endX - this.clickStartX);
     const distY = Math.abs(endY - this.clickStartY);
 
@@ -460,8 +518,8 @@ class App {
     }
     this.onCheck();
   }
-  onWheel(e: any) {
-    const delta = e.deltaY || e.wheelDelta || e.detail;
+  onWheel(e: WheelEventWithLegacyDelta) {
+    const delta = e.deltaY ?? e.wheelDelta ?? e.detail ?? 0;
     this.scroll.target += (delta > 0 ? this.scrollSpeed : -this.scrollSpeed) * 0.2;
     this.onCheckDebounce();
   }
@@ -506,7 +564,7 @@ class App {
     this.boundOnTouchMove = this.onTouchMove.bind(this);
     this.boundOnTouchUp = this.onTouchUp.bind(this);
     window.addEventListener('resize', this.boundOnResize);
-    window.addEventListener('mousewheel', this.boundOnWheel);
+    window.addEventListener('mousewheel', this.boundOnWheel as EventListener);
     window.addEventListener('wheel', this.boundOnWheel);
     this.gl.canvas.addEventListener('mousedown', this.boundOnTouchDown);
     this.gl.canvas.addEventListener('mousemove', this.boundOnTouchMove);
@@ -518,7 +576,7 @@ class App {
   destroy() {
     window.cancelAnimationFrame(this.raf);
     window.removeEventListener('resize', this.boundOnResize);
-    window.removeEventListener('mousewheel', this.boundOnWheel);
+    window.removeEventListener('mousewheel', this.boundOnWheel as EventListener);
     window.removeEventListener('wheel', this.boundOnWheel);
     if (this.gl && this.gl.canvas) {
       this.gl.canvas.removeEventListener('mousedown', this.boundOnTouchDown);
@@ -535,7 +593,7 @@ class App {
 }
 
 interface CircularGalleryProps {
-  items?: { image: string; text: string }[];
+  items?: GalleryItem[];
   bend?: number;
   textColor?: string;
   borderRadius?: number;
@@ -544,6 +602,19 @@ interface CircularGalleryProps {
   scrollEase?: number;
   onImageClick?: (index: number) => void;
 }
+
+const getPointerCoordinates = (event: PointerEvent) => {
+  if ('touches' in event) {
+    if (event.changedTouches.length > 0) {
+      return { x: event.changedTouches[0].clientX, y: event.changedTouches[0].clientY };
+    }
+    if (event.touches.length > 0) {
+      return { x: event.touches[0].clientX, y: event.touches[0].clientY };
+    }
+    return { x: 0, y: 0 };
+  }
+  return { x: event.clientX, y: event.clientY };
+};
 
 export default function CircularGallery({
   items,
