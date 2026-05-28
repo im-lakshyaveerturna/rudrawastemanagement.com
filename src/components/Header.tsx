@@ -49,7 +49,7 @@ function Header({ currentPage, onNavigate }: HeaderProps) {
                 className={`w-full rounded-md px-4 py-2.5 text-left text-sm font-semibold text-white transition hover:bg-gradient-to-b hover:from-[#7c3aed] hover:via-[#6d28d9] hover:to-[#4c1d95] ${currentPage === 'Laws & Regulations' ? 'bg-gradient-to-b from-[#079c17] via-[#067611] to-[#02540b]' : ''}`}
                 onClick={() => onNavigate('Laws & Regulations')}
               >
-                Laws & Procedures
+                Laws & Regulations
               </button>
             </div>
           </div>

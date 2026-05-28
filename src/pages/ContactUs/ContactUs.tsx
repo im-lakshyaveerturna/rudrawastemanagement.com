@@ -1,3 +1,4 @@
+import type { FormEvent } from 'react'
 import FuzzyText from '../../components/FuzzyText'
 import locationIcon from '../../assets/contact/location.png'
 import phoneIcon from '../../assets/contact/phone_call.png'
@@ -5,7 +6,29 @@ import emailIcon from '../../assets/contact/gmail.png'
 import clockIcon from '../../assets/contact/clock.png'
 
 function ContactUs() {
+  const emailAddress = 'office@rudrawastemanagement.com'
   const inputClasses = 'w-full rounded-lg border border-[#ddd] bg-[#fafafa] px-4 py-4 text-base transition focus:border-black focus:bg-white focus:outline-none'
+
+  const handleSubmit = (event: FormEvent<HTMLFormElement>) => {
+    event.preventDefault()
+    const formData = new FormData(event.currentTarget)
+    const getValue = (key: string) => (formData.get(key) ?? '').toString().trim()
+    const name = getValue('name')
+    const email = getValue('email')
+    const phone = getValue('phone')
+    const subject = getValue('subject') || 'Website inquiry'
+    const message = getValue('message')
+
+    const body = [
+      `Name: ${name}`,
+      `Email: ${email}`,
+      phone ? `Phone: ${phone}` : 'Phone: (not provided)',
+      '',
+      message
+    ].join('\n')
+
+    window.location.href = `mailto:${emailAddress}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`
+  }
 
   return (
     <div className="min-h-[calc(100vh-80px)] w-full bg-white">
@@ -51,18 +74,18 @@ function ContactUs() {
 
           <div className="rounded-2xl border border-[#e5e5e5] bg-white p-8">
             <h2 className="mb-10 text-[2rem] font-bold tracking-[-0.5px] text-[#1a1a1a]">Send Us a Message</h2>
-            <form className="flex flex-col gap-7">
+            <form className="flex flex-col gap-7" onSubmit={handleSubmit}>
               <div className="flex flex-col gap-2.5">
                 <label htmlFor="name" className="text-[0.95rem] font-semibold text-[#1a1a1a]">Full Name</label>
-                <input className={inputClasses} type="text" id="name" name="name" placeholder="John Doe" required />
+                <input className={inputClasses} type="text" id="name" name="name" placeholder="John Doe" autoComplete="name" required />
               </div>
               <div className="flex flex-col gap-2.5">
                 <label htmlFor="email" className="text-[0.95rem] font-semibold text-[#1a1a1a]">Email Address</label>
-                <input className={inputClasses} type="email" id="email" name="email" placeholder="john@example.com" required />
+                <input className={inputClasses} type="email" id="email" name="email" placeholder="john@example.com" autoComplete="email" required />
               </div>
               <div className="flex flex-col gap-2.5">
                 <label htmlFor="phone" className="text-[0.95rem] font-semibold text-[#1a1a1a]">Phone Number</label>
-                <input className={inputClasses} type="tel" id="phone" name="phone" placeholder="+91 9876543210" />
+                <input className={inputClasses} type="tel" id="phone" name="phone" placeholder="+91 9876543210" autoComplete="tel" inputMode="tel" />
               </div>
               <div className="flex flex-col gap-2.5">
                 <label htmlFor="subject" className="text-[0.95rem] font-semibold text-[#1a1a1a]">Subject</label>
