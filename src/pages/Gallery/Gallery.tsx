@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import CircularGallery from '../../components/CircularGallery'
 import image1 from '../../assets/gallery/image-1.jpg'
 import image2 from '../../assets/gallery/image-2.jpg'
@@ -33,6 +33,22 @@ function Gallery() {
     setSelectedImage({ src: images[index].image, alt: images[index].text })
   }
 
+  useEffect(() => {
+    if (!selectedImage) return
+    const handleKeyDown = (event: KeyboardEvent) => {
+      if (event.key === 'Escape') {
+        setSelectedImage(null)
+      }
+    }
+    const previousOverflow = document.body.style.overflow
+    document.body.style.overflow = 'hidden'
+    window.addEventListener('keydown', handleKeyDown)
+    return () => {
+      window.removeEventListener('keydown', handleKeyDown)
+      document.body.style.overflow = previousOverflow
+    }
+  }, [selectedImage])
+
   return (
     <div className="min-h-[calc(100vh-80px)] w-full">
       <section className="bg-gradient-to-br from-[#0b6e16] via-[#029e12] to-[#1b8f2a] px-6 pb-16 pt-24 text-center text-white">
@@ -47,10 +63,18 @@ function Gallery() {
       </section>
 
       {selectedImage && (
-        <div className="fixed inset-0 z-[9999] flex cursor-pointer items-center justify-center bg-black/95" onClick={() => setSelectedImage(null)}>
+        <div
+          className="fixed inset-0 z-[9999] flex cursor-pointer items-center justify-center bg-black/95"
+          role="dialog"
+          aria-modal="true"
+          aria-label={selectedImage.alt}
+          onClick={() => setSelectedImage(null)}
+        >
           <div className="relative max-h-[90%] max-w-[90%] cursor-default" onClick={(e) => e.stopPropagation()}>
             <button
               className="absolute -top-10 right-0 flex h-10 w-10 items-center justify-center border-none bg-transparent p-0 text-5xl leading-none text-white transition hover:opacity-70"
+              type="button"
+              aria-label="Close image preview"
               onClick={() => setSelectedImage(null)}
             >
               ×
