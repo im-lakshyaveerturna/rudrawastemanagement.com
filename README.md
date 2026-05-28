@@ -6,6 +6,21 @@
 
 A responsible, compliance-led waste management partner committed to public health, environmental protection, and operational excellence. This document describes the company—its purpose, values, services, standards, and ways of working.
 
+## Development
+
+This project is built with **Vite + React + TypeScript** and styled with **Tailwind CSS**.
+
+```bash
+npm install
+npm run dev
+```
+
+Production build:
+
+```bash
+npm run build
+```
+
 ## Who We Are
 
 Rudra Waste Management provides end-to-end waste management solutions for municipalities, healthcare providers, institutions, and businesses. We focus on safe handling, transparent processes, and measurable environmental outcomes through compliant collection, transportation, processing, treatment, and disposal.

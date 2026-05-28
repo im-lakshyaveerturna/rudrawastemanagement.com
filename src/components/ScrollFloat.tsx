@@ -2,8 +2,6 @@ import { useEffect, useMemo, useRef } from 'react';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 
-import './ScrollFloat.css';
-
 gsap.registerPlugin(ScrollTrigger);
 
 interface ScrollFloatProps {
@@ -34,7 +32,7 @@ const ScrollFloat: React.FC<ScrollFloatProps> = ({
   const splitText = useMemo(() => {
     const text = typeof children === 'string' ? children : '';
     return text.split('').map((char, index) => (
-      <span className="char" key={index}>
+      <span className="char inline-block" key={index}>
         {char === ' ' ? '\u00A0' : char}
       </span>
     ));
@@ -78,8 +76,8 @@ const ScrollFloat: React.FC<ScrollFloatProps> = ({
   }, [scrollContainerRef, animationDuration, ease, scrollStart, scrollEnd, stagger]);
 
   return (
-    <h2 ref={containerRef} className={`scroll-float ${containerClassName}`}>
-      <span className={`scroll-float-text ${textClassName}`}>{splitText}</span>
+    <h2 ref={containerRef} className={`overflow-hidden ${containerClassName}`}>
+      <span className={`inline-block text-center text-[clamp(1.6rem,8vw,10rem)] font-black leading-[1.5] ${textClassName}`}>{splitText}</span>
     </h2>
   );
 };

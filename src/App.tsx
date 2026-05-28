@@ -1,6 +1,5 @@
 import { useEffect } from 'react'
 import { Routes, Route, useNavigate, useLocation } from 'react-router-dom'
-import './App.css'
 import Header from './components/Header'
 import Home from './pages/Home/Home'
 import ContactUs from './pages/ContactUs/ContactUs'
@@ -10,7 +9,6 @@ import LawsRegulations from './pages/AboutUs/LawsRegulations/LawsRegulations'
 import Services from './pages/Services/Services'
 import NotFound from './pages/NotFound/NotFound'
 
-// SEO: Page metadata configuration
 const pageMetadata: Record<string, { title: string; description: string }> = {
   '/': {
     title: 'Rudra Waste Management - Biomedical & Healthcare Waste Solutions | Muzaffarnagar',
@@ -38,13 +36,12 @@ const pageMetadata: Record<string, { title: string; description: string }> = {
   }
 }
 
-// Map old state-based pages to routes
 const routeMapping: Record<string, string> = {
-  'Home': '/',
+  Home: '/',
   'Who We Are': '/who-we-are',
   'Laws & Regulations': '/laws-regulations',
-  'Gallery': '/gallery',
-  'Services': '/services',
+  Gallery: '/gallery',
+  Services: '/services',
   'Contact Us': '/contact'
 }
 
@@ -52,13 +49,11 @@ function App() {
   const navigate = useNavigate()
   const location = useLocation()
 
-  // Get current page name from route
   const getCurrentPage = (): string => {
     const path = location.pathname
-    return Object.entries(routeMapping).find(([_, route]) => route === path)?.[0] || 'Home'
+    return Object.entries(routeMapping).find(([, route]) => route === path)?.[0] || 'Home'
   }
 
-  // Handle navigation with route support
   const handleNavigate = (page: string) => {
     const route = routeMapping[page]
     if (route) {
@@ -66,13 +61,11 @@ function App() {
     }
   }
 
-  // SEO: Update document title and meta description on route change
   useEffect(() => {
     const metadata = pageMetadata[location.pathname]
     if (metadata) {
       document.title = metadata.title
-      
-      // Update meta description
+
       let metaDescription = document.querySelector('meta[name="description"]')
       if (metaDescription) {
         metaDescription.setAttribute('content', metadata.description)
@@ -84,14 +77,13 @@ function App() {
       }
     }
 
-    // Scroll to top on route change
     window.scrollTo(0, 0)
   }, [location.pathname])
 
   return (
-    <div className="app">
+    <div className="min-h-screen">
       <Header currentPage={getCurrentPage()} onNavigate={handleNavigate} />
-      <main className="main-content">
+      <main className="min-h-screen">
         <Routes>
           <Route path="/" element={<Home onContactClick={() => handleNavigate('Contact Us')} />} />
           <Route path="/who-we-are" element={<WhoWeAre />} />
