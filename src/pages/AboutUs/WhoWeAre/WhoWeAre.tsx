@@ -1,44 +1,47 @@
-import './WhoWeAre.css'
 import logo from '../../../assets/whoweare/rudra_pnglogo.png'
 
 export default function WhoWeAre() {
   return (
-    <div className="about-page">
-      <section className="about-hero">
-        <div className="container">
-          <img src={logo} alt="Rudra Waste Management" className="page-logo" />
-          <div className="hero-cta">
-          </div>
+    <div className="min-h-[calc(100vh-80px)] w-full">
+      <section className="bg-gradient-to-br from-[#0b6e16] via-[#029e12] to-[#1b8f2a] px-6 pb-16 pt-24 text-center text-white">
+        <div className="mx-auto max-w-[1100px]">
+          <img src={logo} alt="Rudra Waste Management" className="inline-block h-auto w-full max-w-[280px] md:max-w-[220px]" />
+          <div className="mt-5" />
         </div>
       </section>
 
-      {/* Who We Are Intro */}
-      <section className="about-story">
-        <div className="container">
-          <div className="story-grid">
-            <div className="story-text">
-              <h2>Rudra Waste Management</h2>
-              <p>
-                We are a dedicated waste-management company, based in Muzaffarnagar, Uttar Pradesh. We are committed to providing comprehensive, environmentally responsible solutions and specialize in scientific collection, transportation, treatment, recycling, and disposal of various categories of waste, with a strong emphasis on sanitary, regulatory-compliant procedures, and environmental protection.
-              </p>
-            </div>
-
-            <aside className="story-quick">
-              <ul className="quick-features">
-                <li><strong>Safety-first</strong><span>Zero-compromise safety practices</span></li>
-                <li><strong>Regulatory Compliance</strong><span>Documented SOPs & manifests</span></li>
-                <li><strong>Local Knowledge</strong><span>Tailored solutions for regional rules</span></li>
-              </ul>
-            </aside>
+      <section className="bg-white px-6 py-16">
+        <div className="mx-auto grid max-w-[1100px] grid-cols-1 items-start gap-10 lg:grid-cols-[1fr_320px]">
+          <div>
+            <h2 className="mb-5 text-left text-4xl font-bold text-[#1a1a1a] md:text-[2.4rem]">Rudra Waste Management</h2>
+            <p className="text-left text-[1.05rem] leading-8 text-[#444]">
+              We are a dedicated waste-management company, based in Muzaffarnagar, Uttar Pradesh. We are committed to providing comprehensive, environmentally responsible solutions and specialize in scientific collection, transportation, treatment, recycling, and disposal of various categories of waste, with a strong emphasis on sanitary, regulatory-compliant procedures, and environmental protection.
+            </p>
           </div>
+
+          <aside className="rounded-[10px] border border-[#e6f4ea] bg-[#f9fffa] p-5">
+            <ul className="m-0 list-none p-0">
+              <li className="border-b border-dashed border-[#e6f4ea] py-4">
+                <strong className="mb-1 block font-bold text-[#05640f]">Safety-first</strong>
+                <span className="text-[0.95rem] text-[#444]">Zero-compromise safety practices</span>
+              </li>
+              <li className="border-b border-dashed border-[#e6f4ea] py-4">
+                <strong className="mb-1 block font-bold text-[#05640f]">Regulatory Compliance</strong>
+                <span className="text-[0.95rem] text-[#444]">Documented SOPs & manifests</span>
+              </li>
+              <li className="py-4">
+                <strong className="mb-1 block font-bold text-[#05640f]">Local Knowledge</strong>
+                <span className="text-[0.95rem] text-[#444]">Tailored solutions for regional rules</span>
+              </li>
+            </ul>
+          </aside>
         </div>
       </section>
 
-      {/* Biomedical Waste Management Section (moved above services) */}
-      <section className="about-team">
-        <div className="container">
-          <h2>Biomedical Waste Management</h2>
-          <div className="commitment-content">
+      <section className="bg-white px-6 py-16">
+        <div className="mx-auto max-w-[1000px]">
+          <h2 className="mb-5 text-center text-4xl font-bold text-[#1a1a1a] md:text-[2.2rem]">Biomedical Waste Management</h2>
+          <div className="mx-auto max-w-[900px] space-y-5 text-center text-[1.1rem] leading-8 text-[#444]">
             <p>
               Biomedical waste management has recently emerged as an issue of major concern not only to hospitals, nursing home authorities but also to the environment. The bio-medical wastes generated from health care units depend upon a number of factors such as waste management methods, type of health care units, occupancy of healthcare units, specialization of healthcare units, ratio of reusable items in use, availability of infrastructure and resources etc.
             </p>
@@ -51,8 +54,6 @@ export default function WhoWeAre() {
           </div>
         </div>
       </section>
-
-      {/* Services section moved to dedicated Services page */}
     </div>
   )
 }
