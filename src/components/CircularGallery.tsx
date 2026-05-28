@@ -605,11 +605,11 @@ interface CircularGalleryProps {
 
 const getPointerCoordinates = (event: PointerEvent) => {
   if ('touches' in event) {
-    if (event.changedTouches.length > 0) {
-      return { x: event.changedTouches[0].clientX, y: event.changedTouches[0].clientY };
-    }
     if (event.touches.length > 0) {
       return { x: event.touches[0].clientX, y: event.touches[0].clientY };
+    }
+    if (event.changedTouches.length > 0) {
+      return { x: event.changedTouches[0].clientX, y: event.changedTouches[0].clientY };
     }
     return { x: 0, y: 0 };
   }
